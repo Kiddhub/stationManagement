@@ -259,6 +259,21 @@ public class Employee {
             return false;
         }
     }
+    public boolean checkAttend(String username){
+        try{
+            Connection conn = DbConnection.getConnection();
+            String sql = "UPDATE employees SET hours_worked = hours_worked +2 WHERE username = ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1,username);
+            statement.executeUpdate();
+            statement.close();
+            conn.close();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 
 
 }

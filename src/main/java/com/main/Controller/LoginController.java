@@ -3,6 +3,7 @@ package com.main.Controller;
 import com.main.Model.Employee;
 import com.main.Model.User;
 import com.main.View.AdminInterface;
+import com.main.View.CustomerInterface;
 import com.main.View.EmployeeInterface;
 import com.main.View.EmployeeManagement;
 import javafx.event.ActionEvent;
@@ -64,6 +65,10 @@ public class LoginController {
             }else if(roleId == 2){
                 EmployeeInterface employeeInterface = new EmployeeInterface(username);
                 employeeInterface.start(new Stage());
+            } else {
+                CustomerInterface customerInterface = new CustomerInterface(username);
+                customerInterface.start(new Stage());
+
             }
 
             Stage loginStage = (Stage) loginButton.getScene().getWindow();
