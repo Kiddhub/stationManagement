@@ -1,9 +1,7 @@
 package com.main.Controller;
 
 import com.main.Model.Customer;
-import com.main.Model.Employee;
 import com.main.View.CustomerInterface;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;

@@ -20,7 +20,8 @@
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
             <Button fx:id="updateButton" layoutX="60.0" layoutY="70.0" mnemonicParsing="false" onAction="#updateEmployeeOnAction" prefHeight="82.0" prefWidth="209.0" text="Chỉnh sửa thông tin" />
-            <Button fx:id="createBillButton" layoutX="60.0" layoutY="197.0" mnemonicParsing="false" prefHeight="82.0" prefWidth="209.0" text="Tạo phiếu" />
+            <Button fx:id="createBookingButton" layoutX="60.0" layoutY="197.0" mnemonicParsing="false" onAction="#createBookingOnAction" prefHeight="82.0" prefWidth="209.0" text="Tạo phiếu" />
+            <Button fx:id="historyBookingButton" layoutX="305.0" layoutY="70.0" mnemonicParsing="false" onAction="#historyBookingOnAction" prefHeight="82.0" prefWidth="209.0" text="Lịch sử phiếu thuê" />
          </children></AnchorPane>
   </items>
 </SplitPane>

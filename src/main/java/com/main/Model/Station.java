@@ -23,9 +23,18 @@ public class Station {
 
     }
 
+
     public Station(String stationName, Double stationPrice) {
         this.stationName = stationName;
         this.stationPrice = stationPrice;
+    }
+
+    public Station(int stationId) {
+        this.stationId =stationId;
+    }
+
+    public Station(String stationName) {
+        this.stationName = stationName;
     }
 
     public int getStationId() {
@@ -142,5 +151,24 @@ public class Station {
             e.printStackTrace();
             return false;
         }
+    }
+    public static double getPrice(String stationName){
+        double price = 0;
+        try{
+            Connection connection = DbConnection.getConnection();
+            String sql = "SELECT stationPrice FROM stations WHERE stationName = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,stationName);
+            ResultSet rs = statement.executeQuery();
+            if(rs.next()){
+                 price = rs.getDouble("stationPrice");
+            }
+            statement.close();
+            rs.close();
+            connection.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return price;
     }
 }

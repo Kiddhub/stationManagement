@@ -44,6 +44,10 @@ public class Customer {
 
     }
 
+    public Customer(int customerId) {
+        this.customerId = customerId;
+    }
+
     public String getDob() {
         return dob;
     }

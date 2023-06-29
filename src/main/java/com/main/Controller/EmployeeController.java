@@ -1,9 +1,11 @@
 package com.main.Controller;
 
 import com.main.Model.Employee;
+import com.main.View.CustomerManagement;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class EmployeeController {
     @FXML
@@ -36,6 +38,12 @@ public class EmployeeController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    public void createCustomerOnAction() throws Exception{
+        CustomerManagement customerManagement = new CustomerManagement();
+        customerManagement.start(new Stage());
+        Stage currentStage = (Stage) customerButton.getScene().getWindow();
+        currentStage.close();
     }
 
 }

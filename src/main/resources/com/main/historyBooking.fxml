@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.15577889447236182" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.HistoryBookingController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Text layoutX="197.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LỊCH SỬ ĐẶT SÂN">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="cancelButton" layoutX="534.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Huỷ" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <TableView fx:id="table" layoutX="199.0" layoutY="54.0" prefHeight="333.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="52.0" text="ID " />
+                <TableColumn fx:id="stationName" prefWidth="70.0" text="Tên sân" />
+                  <TableColumn fx:id="date" prefWidth="119.0" text="Ngày đặt sân" />
+                  <TableColumn fx:id="timeIn" prefWidth="79.0" text="Giờ vào" />
+                  <TableColumn fx:id="timeOut" prefWidth="84.0" text="Giờ ra" />
+                  <TableColumn fx:id="totalPrice" prefWidth="110.0" text="Tổng tiền" />
+                  <TableColumn fx:id="status" prefWidth="91.0" text="Trạng thái" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
