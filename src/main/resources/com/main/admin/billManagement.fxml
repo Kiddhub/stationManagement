@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.1457286432160804" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.BillManagementController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Text layoutX="39.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ HOÁ ĐƠN" wrappingWidth="173.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="cancelButton" layoutX="610.0" layoutY="30.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="49.0" text="Huỷ" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <TableView fx:id="table" layoutX="153.0" layoutY="40.0" prefHeight="337.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="billId" prefWidth="41.0" text="ID" />
+                <TableColumn fx:id="customerName" prefWidth="109.0" text="Tên khách hàng" />
+                  <TableColumn fx:id="bookingDate" prefWidth="75.0" text="Ngày thuê" />
+                  <TableColumn fx:id="customerPhone" prefWidth="75.0" text="SĐT" />
+                  <TableColumn fx:id="stationName" prefWidth="75.0" text="Tên sân" />
+                  <TableColumn fx:id="timeIn" prefWidth="75.0" text="Giờ vào" />
+                  <TableColumn fx:id="timeOut" prefWidth="75.0" text="Giờ ra" />
+                  <TableColumn fx:id="username" prefWidth="75.0" text="Nhân viên" />
+                  <TableColumn fx:id="totalPrice" prefWidth="75.0" text="Tổng tiền" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

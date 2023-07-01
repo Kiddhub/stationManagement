@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.14482758620689656" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="646.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Customer.CustomerBookingController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="57.0" prefWidth="526.0">
+         <children>
+            <Text layoutX="109.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ĐẶT SÂN BÓNG">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="526.0">
+         <children>
+            <Label layoutX="67.0" layoutY="43.0" prefHeight="25.0" prefWidth="82.0" text="Họ và tên" />
+            <TextField fx:id="customerNameField" editable="false" layoutX="149.0" layoutY="43.0" prefHeight="25.0" prefWidth="181.0" />
+            <Label layoutX="68.0" layoutY="93.0" prefHeight="25.0" prefWidth="82.0" text="Số điện thoại" />
+            <TextField fx:id="customerPhoneField" editable="false" layoutX="150.0" layoutY="93.0" prefHeight="25.0" prefWidth="181.0" />
+            <Label layoutX="68.0" layoutY="193.0" prefHeight="25.0" prefWidth="82.0" text="Giờ vào" />
+            <Label layoutX="68.0" layoutY="243.0" prefHeight="25.0" prefWidth="82.0" text="Giờ ra" />
+            <Label layoutX="68.0" layoutY="293.0" prefHeight="25.0" prefWidth="82.0" text="Sân" />
+            <Label layoutX="68.0" layoutY="399.0" prefHeight="25.0" prefWidth="82.0" text="Tổng tiền" />
+            <TextField fx:id="totalPriceField" editable="false" layoutX="149.0" layoutY="399.0" prefHeight="25.0" prefWidth="181.0" promptText="Bấm tính tiền để hiển thị" />
+            <ChoiceBox fx:id="timeInBox" layoutX="150.0" layoutY="193.0" prefHeight="25.0" prefWidth="181.0" />
+            <ChoiceBox fx:id="timeOutBox" layoutX="150.0" layoutY="243.0" prefHeight="25.0" prefWidth="181.0" />
+            <ChoiceBox fx:id="stationBox" layoutX="149.0" layoutY="293.0" prefHeight="25.0" prefWidth="181.0" />
+            <Button fx:id="calculateButton" layoutX="42.0" layoutY="346.0" mnemonicParsing="false" onAction="#calculatePriceOnAction" prefHeight="32.0" prefWidth="76.0" text="Tính tiền" />
+            <Button fx:id="createBookingButton" layoutX="111.0" layoutY="473.0" mnemonicParsing="false" onAction="#createBookingOnAction" prefHeight="32.0" prefWidth="76.0" text="Tạo " />
+            <Button fx:id="cancelButton" layoutX="199.0" layoutY="473.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="76.0" text="Huỷ" />
+            <Label layoutX="68.0" layoutY="143.0" prefHeight="25.0" prefWidth="82.0" text="Ngày thuê" />
+            <DatePicker fx:id="dayBookingPicker" layoutX="150.0" layoutY="143.0" prefHeight="25.0" prefWidth="181.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

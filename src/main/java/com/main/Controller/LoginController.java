@@ -1,11 +1,9 @@
 package com.main.Controller;
 
-import com.main.Model.Employee;
 import com.main.Model.User;
-import com.main.View.AdminInterface;
-import com.main.View.CustomerInterface;
-import com.main.View.EmployeeInterface;
-import com.main.View.EmployeeManagement;
+import com.main.View.Admin.AdminInterface;
+import com.main.View.Customer.CustomerInterface;
+import com.main.View.Employee.EmployeeInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

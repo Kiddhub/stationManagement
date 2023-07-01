@@ -22,7 +22,6 @@ public class Employee {
     private Double salary;
 
 
-
     public Double getSalary() {
         return salary;
     }
