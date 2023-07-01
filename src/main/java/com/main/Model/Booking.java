@@ -40,6 +40,21 @@ public class Booking {
         this.status = status;
     }
 
+    public Booking(int bookingId,Customer customer,Station station, LocalDate bookingDate, LocalTime timeIn, LocalTime timeOut, double totalPrice, boolean status) {
+        this.bookingId = bookingId;
+        this.customer = customer;
+        this.station =station;
+        this.bookingDate = bookingDate;
+        this.timeIn =timeIn;
+        this.timeOut = timeOut;
+        this.totalPrice = totalPrice;
+        this.status =status;
+    }
+
+    public Booking(int bookingId) {
+        this.bookingId = bookingId;
+    }
+
     public int getBookingId() {
         return bookingId;
     }
@@ -55,6 +70,7 @@ public class Booking {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
 
     public double getTotalPrice() {
         return totalPrice;
@@ -151,7 +167,6 @@ public class Booking {
             e.printStackTrace();
         }
         return bookingList;
-
     }
 
     public static List<Station> getAvailableStations(LocalDate date, LocalTime timeIn, LocalTime timeOut) {
@@ -177,6 +192,40 @@ public class Booking {
             e.printStackTrace();
         }
         return availableStations;
+    }
+    public static ObservableList<Booking> getBooking() {
+        ObservableList<Booking> bookings = FXCollections.observableArrayList();
+        try{
+            Connection connection = DbConnection.getConnection();
+            String sql = "SELECT bo.bookingId, s.stationName, c.customerName, c.customerPhone, bo.bookingDate, bo.timeIn, bo.timeOut, bo.totalPrice, bo.status " +
+                    "FROM bookings bo " +
+                    "JOIN customers c ON bo.customerId = c.customerId " +
+                    "JOIN stations s ON bo.stationId = s.stationId " +
+                    "WHERE bo.status = false";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()){
+                int bookingId = rs.getInt("bookingId");
+                String stationName = rs.getString("stationName");
+                String customerName = rs.getString("customerName");
+                String customerPhone = rs.getString("customerPhone");
+                LocalDate bookingDate = rs.getDate("bookingDate").toLocalDate();
+                LocalTime timeIn = rs.getTime("timeIn").toLocalTime();
+                LocalTime timeOut = rs.getTime("timeOut").toLocalTime();
+                double totalPrice = rs.getDouble("totalPrice");
+                boolean status = rs.getBoolean("status");
+                Customer customer = new Customer(customerName,customerPhone);
+                Station station = new Station(stationName);
+                Booking booking = new Booking(bookingId,customer,station,bookingDate,timeIn,timeOut,totalPrice,status);
+                bookings.add(booking);
+            }
+            statement.close();
+            rs.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return bookings;
+
     }
 
 }

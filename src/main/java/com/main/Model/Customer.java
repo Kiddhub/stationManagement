@@ -48,6 +48,11 @@ public class Customer {
         this.customerId = customerId;
     }
 
+    public Customer(String customerName, String customerPhone) {
+        this.customerName =customerName;
+        this.customerPhone = customerPhone;
+    }
+
     public String getDob() {
         return dob;
     }

@@ -1,6 +1,7 @@
 package com.main.Controller;
 
 import com.main.Model.Employee;
+import com.main.View.Bill;
 import com.main.View.CustomerManagement;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -43,6 +44,12 @@ public class EmployeeController {
         CustomerManagement customerManagement = new CustomerManagement();
         customerManagement.start(new Stage());
         Stage currentStage = (Stage) customerButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void billListOnAction() throws Exception {
+        Bill bill = new Bill(username);
+        bill.start(new Stage());
+        Stage currentStage = (Stage) billButton.getScene().getWindow();
         currentStage.close();
     }
 

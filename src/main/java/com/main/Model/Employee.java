@@ -21,6 +21,8 @@ public class Employee {
     private int hours_worked;
     private Double salary;
 
+
+
     public Double getSalary() {
         return salary;
     }
@@ -32,6 +34,14 @@ public class Employee {
     public Employee(){
 
     }
+    public Employee(int employeeId, String employeeName) {
+        this.employeeId = employeeId;
+        this.employeeName =employeeName;
+    }
+    public Employee(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
 
     public Employee(int employeeId, String employeeName, String employeeAddress, String employeeIdCard, String employeePhone, String username, String password, String dob) {
         this.employeeId = employeeId;
@@ -57,7 +67,9 @@ public class Employee {
         this.salary = salary;
     }
 
-
+    public Employee(String username){
+        this.username = username;
+    }
 
     public Employee(String employeeName, String employeeAddress, String employeeIdCard, String employeePhone, String username, String password, int roleId, String dob) {
         this.employeeName = employeeName;
@@ -274,6 +286,31 @@ public class Employee {
         }
         return false;
     }
+    public static Employee getEmployee(String username) {
+        Employee employee = null;
+
+        try {
+            Connection connection = DbConnection.getConnection();
+            String sql = "SELECT employeeName,employeeId FROM employees WHERE username = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, username);
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()) {
+                String employeeName = rs.getString("employeeName");
+                int employeeId = rs.getInt("employeeId");
+                employee = new Employee(employeeId,employeeName);
+            }
+
+            statement.close();
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return employee;
+    }
+
 
 
 }
