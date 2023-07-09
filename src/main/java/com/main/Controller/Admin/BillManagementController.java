@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -43,15 +44,16 @@ public class BillManagementController implements Initializable {
 
     @FXML
     private TableColumn<Bill, LocalTime> timeIn;
-
     @FXML
     private TableColumn<Bill, LocalTime> timeOut;
-
     @FXML
     private TableColumn<Bill, Double> totalPrice;
-
     @FXML
     private Button cancelButton;
+    @FXML
+    private Button searchButton;
+    @FXML
+    private DatePicker bookingDateField;
 
 
 
@@ -68,6 +70,16 @@ public class BillManagementController implements Initializable {
         totalPrice.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getBooking().getTotalPrice()));
         ObservableList<Bill> billList = Bill.getBillFromData();
         table.setItems(FXCollections.observableList(billList));
+    }
+    public void searchBillOnAction(){
+    LocalDate selectedDate = bookingDateField.getValue();
+        if(selectedDate != null){
+            ObservableList<Bill> filteredBills = Bill.getBillsByDate(selectedDate);
+            table.setItems(filteredBills);
+        }else {
+            ObservableList<Bill> billList = Bill.getBillFromData();
+            table.setItems(FXCollections.observableList(billList));
+        }
     }
 
     public void cancelOnAction() throws Exception{

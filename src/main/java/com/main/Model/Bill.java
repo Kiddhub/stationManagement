@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
@@ -120,19 +121,31 @@ public class Bill {
             statement.setInt(1, bill.booking.getBookingId());
             statement.setInt(2, bill.employee.getEmployeeId());
             statement.executeUpdate();
-
             // Đóng kết nối và statement
             statement.close();
             connection.close();
             return true;
-
-
         } catch (Exception e) {
             e.printStackTrace();
             return false;
             // Hiển thị thông báo lỗi nếu xảy ra lỗi trong quá trình lưu hoá đơn
         }
     }
+        public static void updateStatus(int bookingId) {
+            try {
+                Connection connection = DbConnection.getConnection();
+                String sql = "UPDATE bookings SET status = true WHERE bookingId = ?";
+                PreparedStatement statement = connection.prepareStatement(sql);
+                statement.setInt(1, bookingId);
+                statement.executeUpdate();
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
     public static ObservableList<Bill> getBillFromData() {
         ObservableList<Bill> billList = FXCollections.observableArrayList();
         try{
@@ -169,5 +182,82 @@ public class Bill {
         }
         return billList;
     }
+    public static ObservableList<Bill> getBillsByDate(LocalDate date) {
+        ObservableList<Bill> billList = FXCollections.observableArrayList();
+
+        try {
+            Connection connection = DbConnection.getConnection();
+            String sql = "SELECT b.billId, c.customerName, bo.bookingDate, c.customerPhone, s.stationName, bo.timeIn, bo.timeOut, e.employeeName, bo.totalPrice " +
+                    "FROM bills b " +
+                    "JOIN bookings bo ON b.bookingId = bo.bookingId " +
+                    "JOIN customers c ON bo.customerId = c.customerId " +
+                    "JOIN stations s ON bo.stationId = s.stationId " +
+                    "JOIN employees e ON b.employeeId = e.employeeId " +
+                    "WHERE bo.bookingDate = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setDate(1, Date.valueOf(date));
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                int billId = rs.getInt("billId");
+                String customerName = rs.getString("customerName");
+                String customerPhone = rs.getString("customerPhone");
+                String stationName = rs.getString("stationName");
+                LocalDate bookingDate = rs.getDate("bookingDate").toLocalDate();
+                LocalTime timeIn = rs.getTime("timeIn").toLocalTime();
+                LocalTime timeOut = rs.getTime("timeOut").toLocalTime();
+                String username = rs.getString("username");
+                double totalPrice = rs.getDouble("totalPrice");
+                Customer customer = new Customer(customerName,customerPhone);
+                Station station = new Station(stationName);
+                Booking booking = new Booking(customer,station,bookingDate,timeIn,timeOut,totalPrice);
+                Employee employee = new Employee(username);
+                Bill bill = new Bill(billId,booking,employee);
+                billList.add(bill);
+            }
+
+            statement.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return billList;
+    }
+    public static Bill searchBill(int bookingId){
+        Bill bill = new Bill();
+        try {
+            Connection conn = DbConnection.getConnection();
+            String sql = "SELECT b.billId, c.customerName, bo.bookingDate, c.customerPhone, s.stationName, bo.timeIn, bo.timeOut, e.username, bo.totalPrice " +
+                    "FROM bills b " +
+                    "JOIN bookings bo ON b.bookingId = bo.bookingId " +
+                    "JOIN customers c ON bo.customerId = c.customerId " +
+                    "JOIN stations s ON bo.stationId = s.stationId " +
+                    "JOIN employees e ON b.employeeId = e.employeeId " +
+                    "WHERE bo.bookingId = ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setInt(1,bookingId);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()){
+                int billId = rs.getInt("billId");
+                String customerName = rs.getString("customerName");
+                String customerPhone = rs.getString("customerPhone");
+                String stationName = rs.getString("stationName");
+                LocalDate bookingDate = rs.getDate("bookingDate").toLocalDate();
+                LocalTime timeIn = rs.getTime("timeIn").toLocalTime();
+                LocalTime timeOut = rs.getTime("timeOut").toLocalTime();
+                String username = rs.getString("username");
+                double totalPrice = rs.getDouble("totalPrice");
+                Customer customer = new Customer(customerName,customerPhone);
+                Station station = new Station(stationName);
+                Booking booking = new Booking(customer,station,bookingDate,timeIn,timeOut,totalPrice);
+                Employee employee = new Employee(username);
+                bill = new Bill(billId, booking, employee);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return bill;
+    }
+
 
 }

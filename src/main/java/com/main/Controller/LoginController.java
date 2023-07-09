@@ -3,6 +3,7 @@ package com.main.Controller;
 import com.main.Model.User;
 import com.main.View.Admin.AdminInterface;
 import com.main.View.Customer.CustomerInterface;
+import com.main.View.Customer.Register;
 import com.main.View.Employee.EmployeeInterface;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,10 +13,8 @@ import javafx.stage.Stage;
 public class LoginController {
     @FXML
     private Button cancelButton;
-
     @FXML
     private TextField usernameField;
-
     @FXML
     private PasswordField passwordField;
     @FXML
@@ -26,7 +25,8 @@ public class LoginController {
     private CheckBox employeeCheck;
     @FXML
     private Button loginButton;
-
+    @FXML
+    private Button registerButton;
     private int roleId = 0;
 
 
@@ -81,6 +81,12 @@ public class LoginController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    public void registerOnAction() throws Exception{
+        Register register = new Register();
+        register.start(new Stage());
+        Stage currentStage = (Stage) registerButton.getScene().getWindow();
+        currentStage.close();
     }
 
 }

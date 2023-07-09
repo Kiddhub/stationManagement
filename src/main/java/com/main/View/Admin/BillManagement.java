@@ -17,7 +17,7 @@ public class BillManagement extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(BillManagement.class.getResource("/com/main/admin/billManagement.fxml"));
         primaryStage.initStyle(StageStyle.DECORATED);
-        Scene scene = new Scene(root, 600, 400);
+        Scene scene = new Scene(root, 700, 600);
         primaryStage.setTitle("Hello!");
         primaryStage.setScene(scene);
         primaryStage.show();

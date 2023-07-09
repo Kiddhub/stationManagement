@@ -54,7 +54,7 @@ public class CustomerInformationController implements Initializable {
         usernameField.setText(customer.getUsername());
         passwordField.setText(customer.getPassword());
         usernameField.setEditable(false);
-        System.out.println(customer.getCustomerName());
+//        System.out.println(customer.getCustomerName());
     }
     public void updateInformationOnAction(){
         String name = customerNameField.getText();

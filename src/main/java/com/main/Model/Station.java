@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 public class Station {
     private int stationId;
     private String stationName;
-
     private Double stationPrice;
 
     public Station(int stationId, String stationName, Double stationPrice) {

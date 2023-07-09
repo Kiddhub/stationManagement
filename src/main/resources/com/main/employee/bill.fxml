@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.3040089086859688" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Employee.Bill">
+<SplitPane dividerPositions="0.3040089086859688" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Employee.Bill">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="269.0">
          <children>
@@ -37,7 +37,7 @@
             <Label layoutX="14.0" layoutY="400.0" prefHeight="25.0" prefWidth="92.0" text="Tổng tiền" />
             <TextField fx:id="totalPriceField" editable="false" layoutX="121.0" layoutY="400.0" prefHeight="25.0" prefWidth="131.0" />
             <Button fx:id="confirmButton" layoutX="58.0" layoutY="545.0" mnemonicParsing="false" onAction="#confirmBillOnAction" text="Xác nhận " />
-            <Button layoutX="145.0" layoutY="545.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Huỷ" />
+            <Button fx:id="cancelButton" layoutX="145.0" layoutY="545.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="68.0" text="Huỷ" />
             <Label layoutX="12.0" layoutY="448.0" prefHeight="25.0" prefWidth="92.0" text="Trạng thái" />
             <Label layoutX="12.0" layoutY="495.0" prefHeight="25.0" prefWidth="92.0" text="Nhân viên" />
             <TextField fx:id="employeeNameField" editable="false" layoutX="121.0" layoutY="495.0" prefHeight="25.0" prefWidth="131.0" />

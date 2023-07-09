@@ -2,6 +2,7 @@ package com.main.Controller.Employee;
 
 import com.main.Model.Booking;
 import com.main.Model.Employee;
+import com.main.View.Employee.EmployeeInterface;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -68,10 +70,9 @@ public class Bill implements Initializable {
     private CheckBox statusCheckBox;
     @FXML
     private TextField employeeNameField;
-
-
+    @FXML
+    private Button cancelButton;
     private String username;
-
     public Bill(String username){
         this.username = username;
     }
@@ -140,15 +141,24 @@ public class Bill implements Initializable {
             com.main.Model.Bill bill = new com.main.Model.Bill();
             bill.setBooking(new Booking(bookingId));
             bill.setEmployee(new Employee(employeeId));
+            com.main.Model.Bill.updateStatus(bookingId);
             boolean success = com.main.Model.Bill.createBill(bill);
             if(success){
                 showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Hoá đơn đã được tạo thành công!");
+                ObservableList<Booking> bookingList = Booking.getBooking();
+                table.setItems(bookingList);
             } else {
                 showAlert(Alert.AlertType.ERROR, "Thông báo", "Lỗi khi tạo hoá đơn!");
             }
         }
     }
-private void showAlert(Alert.AlertType alertType, String title, String message ) {
+    public void cancelOnAction() throws Exception{
+        EmployeeInterface employeeInterface = new EmployeeInterface(username);
+        employeeInterface.start(new Stage());
+        Stage currentStage = (Stage) cancelButton.getScene().getWindow();
+        currentStage.close();
+    }
+    private void showAlert(Alert.AlertType alertType, String title, String message ) {
     Alert alert = new Alert(alertType);
     alert.setTitle(title);
     alert.setHeaderText(null);
