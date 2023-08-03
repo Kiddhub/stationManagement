@@ -24,7 +24,7 @@ public class BillInterface extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/main/customer/billCustomer.fxml"));
         loader.setControllerFactory(c -> new CustomerBill(bookingId));
         Parent root = loader.load();
-        Scene scene = new Scene(root, 900, 600);
+        Scene scene = new Scene(root, 362, 468);
         primaryStage.setTitle("Employee!");
         primaryStage.setScene(scene);
         primaryStage.show();

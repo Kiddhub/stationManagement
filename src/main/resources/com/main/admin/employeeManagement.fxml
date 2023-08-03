@@ -10,52 +10,98 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.37639198218262804" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1113.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.EmployeeManagement">
+<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.EmployeeManagement">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="415.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Label layoutX="91.0" layoutY="14.0" prefHeight="36.0" prefWidth="153.0" text="Quản lý nhân viên">
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>
-                  <Font name="System Bold" size="17.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="58.0" text="Họ và tên" />
-            <TextField fx:id="employeeNameField" layoutX="93.0" layoutY="75.0" />
-            <Label layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="47.0" text="Địa chỉ" />
-            <TextField fx:id="employeeAddressField" layoutX="93.0" layoutY="113.0" />
-            <Label layoutX="14.0" layoutY="151.0" prefHeight="25.0" prefWidth="47.0" text="CMND" />
-            <TextField fx:id="employeeIdCardField" layoutX="93.0" layoutY="151.0" prefHeight="25.0" prefWidth="149.0" />
-            <Label layoutX="14.0" layoutY="192.0" prefHeight="25.0" prefWidth="58.0" text="Ngày sinh" />
-            <Label layoutX="14.0" layoutY="271.0" prefHeight="25.0" prefWidth="58.0" text="Username" />
-            <TextField fx:id="employeeUsernameField" layoutX="91.0" layoutY="271.0" />
-            <Label layoutX="14.0" layoutY="314.0" prefHeight="25.0" prefWidth="58.0" text="Password" />
-            <PasswordField fx:id="employeePasswordField" layoutX="91.0" layoutY="314.0" />
-            <Button fx:id="createEmployeeButton" layoutX="18.0" layoutY="386.0" mnemonicParsing="false" onAction="#createEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Thêm" />
-            <Button fx:id="updateEmployeeButton" layoutX="93.0" layoutY="386.0" mnemonicParsing="false" onAction="#updateEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Sửa" />
-            <Button fx:id="deleteEmployeeButton" layoutX="93.0" layoutY="426.0" mnemonicParsing="false" onAction="#deleteEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Xoá" />
-            <Button fx:id="cancelButton" layoutX="18.0" layoutY="426.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="66.0" text="Huỷ" />
-            <DatePicker fx:id="employeeDobField" layoutX="92.0" layoutY="192.0" prefHeight="25.0" prefWidth="149.0" />
-            <Label layoutX="14.0" layoutY="230.0" prefHeight="25.0" prefWidth="73.0" text="Số điện thoại" />
-            <TextField fx:id="employeePhoneField" layoutX="91.0" layoutY="230.0" prefHeight="25.0" prefWidth="149.0" />
-            <TextField fx:id="employeeIdField" layoutX="244.0" layoutY="386.0" />
-            <Button fx:id="searchEmployeeButton" layoutX="168.0" layoutY="386.0" mnemonicParsing="false" onAction="#searchEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Tìm kiếm" />
+            </Text>
+            <Text layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="employeeButton" layoutX="344.0" layoutY="24.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="NHÂN VIÊN" />
+            <Button fx:id="logOutButton" layoutX="796.0" layoutY="24.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="40.0" prefWidth="88.0" text="ĐĂNG XUẤT" />
+            <Button fx:id="stationButton" layoutX="541.0" layoutY="24.0" mnemonicParsing="false" onAction="#stationButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="SÂN BÓNG" />
+            <Button fx:id="billButton" layoutX="441.0" layoutY="24.0" mnemonicParsing="false" onAction="#billButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="HOÁ ĐƠN" />
+            <Button fx:id="customerButton" layoutX="639.0" layoutY="24.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="40.0" prefWidth="101.0" text="KHÁCH HÀNG" />
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="696.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="body" stylesheets="@../style.css">
          <children>
-            <TableView fx:id="table" layoutX="-5.0" prefHeight="605.0" prefWidth="691.0">
-              <columns>
-                <TableColumn fx:id="id" prefWidth="40.0" text="ID" />
-                <TableColumn fx:id="name" prefWidth="97.0" text="Họ và tên" />
-                  <TableColumn fx:id="address" prefWidth="90.0" text="Địa chỉ" />
-                  <TableColumn fx:id="idCard" prefWidth="78.0" text="CMND" />
-                  <TableColumn fx:id="dob" prefWidth="75.0" text="Ngày sinh" />
+            <TableView fx:id="table" layoutX="270.0" layoutY="68.0" prefHeight="370.0" prefWidth="614.0">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="40.0" text="ID" />
+                  <TableColumn fx:id="name" prefWidth="97.0" text="Họ và tên" />
+                  <TableColumn fx:id="address" prefWidth="70.0" text="Địa chỉ" />
+                  <TableColumn fx:id="idCard" prefWidth="88.0" text="CMND" />
+                  <TableColumn fx:id="dob" prefWidth="85.0" text="Ngày sinh" />
                   <TableColumn fx:id="hours_worked" prefWidth="68.0" text="Số giờ làm" />
                   <TableColumn fx:id="username" prefWidth="75.0" text="Username" />
-                  <TableColumn fx:id="password" prefWidth="82.0" text="Password" />
-                  <TableColumn fx:id="salary" prefWidth="85.0" text="Lương" />
-              </columns>
+                  <TableColumn fx:id="password" prefWidth="89.0" text="Password" />
+               </columns>
             </TableView>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="505.0" prefWidth="286.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="73.0" text="Họ và tên" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="employeeNameField" layoutX="108.0" layoutY="75.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Label layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="47.0" text="Địa chỉ" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="employeeAddressField" layoutX="108.0" layoutY="113.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Label layoutX="14.0" layoutY="151.0" prefHeight="25.0" prefWidth="47.0" text="CMND" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="employeeIdCardField" layoutX="108.0" layoutY="151.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Label layoutX="14.0" layoutY="192.0" prefHeight="25.0" prefWidth="73.0" text="Ngày sinh" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="271.0" prefHeight="25.0" prefWidth="73.0" text="Username" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="employeeUsernameField" layoutX="106.0" layoutY="271.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Label layoutX="14.0" layoutY="314.0" prefHeight="25.0" prefWidth="58.0" text="Password" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="employeePasswordField" layoutX="106.0" layoutY="314.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Button fx:id="createEmployeeButton" layoutX="18.0" layoutY="386.0" mnemonicParsing="false" onAction="#createEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Thêm" />
+                  <Button fx:id="updateEmployeeButton" layoutX="93.0" layoutY="386.0" mnemonicParsing="false" onAction="#updateEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Sửa" />
+                  <Button fx:id="deleteEmployeeButton" layoutX="93.0" layoutY="426.0" mnemonicParsing="false" onAction="#deleteEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Xoá" />
+                  <DatePicker fx:id="employeeDobField" layoutX="107.0" layoutY="192.0" prefHeight="25.0" prefWidth="134.0" />
+                  <Label layoutX="14.0" layoutY="230.0" prefHeight="25.0" prefWidth="88.0" text="Số điện thoại" textFill="#eb1818">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="employeePhoneField" layoutX="106.0" layoutY="230.0" prefHeight="25.0" prefWidth="134.0" />
+                  <TextField fx:id="employeeIdField" layoutX="91.0" layoutY="348.0" prefHeight="25.0" prefWidth="38.0" promptText="ID" />
+                  <Button fx:id="searchEmployeeButton" layoutX="10.0" layoutY="348.0" mnemonicParsing="false" onAction="#searchEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Tìm kiếm" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="306.0" layoutY="14.0" prefHeight="47.0" prefWidth="286.0" text="Quản lý nhân viên" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </items>
 </SplitPane>

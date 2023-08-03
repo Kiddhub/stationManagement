@@ -9,22 +9,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.20903010033444816" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="605.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.BillManagementController">
+<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.BillManagementController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="680.0">
          <children>
-            <Text layoutX="39.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ HOÁ ĐƠN" wrappingWidth="173.0">
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="cancelButton" layoutX="602.0" layoutY="75.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="49.0" text="Huỷ" />
-            <DatePicker fx:id="bookingDateField" layoutX="477.0" layoutY="29.0" />
-            <Button fx:id="searchButton" layoutX="400.0" layoutY="29.0" mnemonicParsing="false" onAction="#searchBillOnAction" text="Tìm kiếm" />
+            <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="employeeButton" layoutX="349.0" layoutY="26.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="NHÂN VIÊN" />
+            <Button fx:id="logOutButton" layoutX="806.0" layoutY="26.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="40.0" prefWidth="88.0" text="ĐĂNG XUẤT" />
+            <Button fx:id="stationButton" layoutX="550.0" layoutY="26.0" mnemonicParsing="false" onAction="#stationButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="SÂN BÓNG" />
+            <Button fx:id="billButton" layoutX="449.0" layoutY="26.0" mnemonicParsing="false" onAction="#billButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="HOÁ ĐƠN" />
+            <Button fx:id="customerButton" layoutX="654.0" layoutY="26.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="40.0" prefWidth="101.0" text="KHÁCH HÀNG" />
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="body" stylesheets="@../style.css">
          <children>
-            <TableView fx:id="table" layoutX="153.0" layoutY="40.0" prefHeight="337.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="table" layoutX="111.0" layoutY="70.0" prefHeight="329.0" prefWidth="677.0" AnchorPane.bottomAnchor="106.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="70.0">
               <columns>
                 <TableColumn fx:id="billId" prefWidth="41.0" text="ID" />
                 <TableColumn fx:id="customerName" prefWidth="109.0" text="Tên khách hàng" />
@@ -37,6 +44,13 @@
                   <TableColumn fx:id="totalPrice" prefWidth="75.0" text="Tổng tiền" />
               </columns>
             </TableView>
+            <Button fx:id="searchButton" layoutX="222.0" layoutY="422.0" mnemonicParsing="false" onAction="#searchBillOnAction" prefHeight="32.0" prefWidth="88.0" text="Tìm kiếm" />
+            <DatePicker fx:id="bookingDateField" layoutX="321.0" layoutY="422.0" prefHeight="32.0" prefWidth="181.0" />
+            <Text layoutX="350.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ HOÁ ĐƠN" wrappingWidth="237.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
   </items>
 </SplitPane>

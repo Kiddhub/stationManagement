@@ -24,7 +24,7 @@ public class CustomerInformation extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/main/customer/customerInformation.fxml"));
         loader.setControllerFactory(c -> new CustomerInformationController(customer));
         Parent root = loader.load();
-        Scene scene = new Scene(root, 335, 600);
+        Scene scene = new Scene(root, 900, 600);
         primaryStage.setTitle("Thông tin khách hàng");
         primaryStage.setScene(scene);
         primaryStage.show();

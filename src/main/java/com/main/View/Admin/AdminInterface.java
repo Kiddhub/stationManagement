@@ -17,8 +17,8 @@ public class AdminInterface extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(AdminInterface.class.getResource("/com/main/admin/adminInterface.fxml"));
         primaryStage.initStyle(StageStyle.DECORATED);
-        Scene scene = new Scene(root, 600, 400);
-//        stage.setTitle("Hello!");
+        Scene scene = new Scene(root, 900, 600);
+        primaryStage.setTitle("Admin");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

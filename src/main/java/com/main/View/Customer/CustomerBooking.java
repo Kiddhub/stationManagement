@@ -24,7 +24,7 @@ public class CustomerBooking extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/main/customer/booking.fxml"));
         loader.setControllerFactory(c -> new CustomerBookingController(customer));
         Parent root = loader.load();
-        Scene scene = new Scene(root, 400, 650);
+        Scene scene = new Scene(root, 900, 600);
         primaryStage.setTitle("Đặt sân bóng");
         primaryStage.setScene(scene);
         primaryStage.show();

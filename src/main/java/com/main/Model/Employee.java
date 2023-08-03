@@ -19,16 +19,7 @@ public class Employee {
     private int roleId=2;
     private String dob;
     private int hours_worked;
-    private Double salary;
 
-
-    public Double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
 
     public Employee(){
 
@@ -53,7 +44,7 @@ public class Employee {
         this.dob = dob;
     }
 
-    public Employee(int employeeId, String employeeName, String employeeAddress, String employeeIdCard, String employeePhone, String dob, String username, String password, int hours_worked, Double salary) {
+    public Employee(int employeeId, String employeeName, String employeeAddress, String employeeIdCard, String employeePhone, String dob, String username, String password, int hours_worked) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeAddress = employeeAddress;
@@ -63,7 +54,6 @@ public class Employee {
         this.password = password;
         this.dob = dob;
         this.hours_worked = hours_worked;
-        this.salary = salary;
     }
 
     public Employee(String username){
@@ -198,8 +188,7 @@ public class Employee {
                 String dob = rs.getString("dob");
                 String employeeAddress = rs.getString("employeeAddress");
                 int hours_worked = rs.getInt("hours_worked");
-                double salary = hours_worked*20000;
-                Employee employee = new Employee(employeeId,employeeName,employeeAddress,employeeIdCard,employeePhone,dob,username,password,hours_worked,salary);
+                Employee employee = new Employee(employeeId,employeeName,employeeAddress,employeeIdCard,employeePhone,dob,username,password,hours_worked);
                 employeeList.add(employee);
             }
             statement.close();

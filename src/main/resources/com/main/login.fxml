@@ -5,59 +5,32 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20_ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.LoginController">
-   <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="865.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.LoginController">
+   <children>
+      <Pane layoutX="523.0" layoutY="78.0" prefHeight="344.0" prefWidth="314.0" styleClass="login" stylesheets="@style.css">
          <children>
-            <Label layoutX="34.0" layoutY="105.0" prefHeight="39.0" prefWidth="133.0" text="Quản lý sân bóng" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-         </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </AnchorPane>
-   </left>
-   <right>
-      <AnchorPane prefHeight="400.0" prefWidth="399.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="91.0" layoutY="39.0" prefHeight="54.0" prefWidth="218.0" text="ĐĂNG NHẬP" textAlignment="CENTER">
+            <Label layoutX="56.0" layoutY="14.0" prefHeight="54.0" prefWidth="218.0" text="ĐĂNG NHẬP" textAlignment="CENTER">
                <font>
                   <Font size="37.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="131.0" prefHeight="28.0" prefWidth="70.0" text="Username">
+            <TextField fx:id="usernameField" layoutX="54.0" layoutY="78.0" prefHeight="39.0" prefWidth="206.0" promptText="Username" />
+            <PasswordField fx:id="passwordField" layoutX="54.0" layoutY="129.0" prefHeight="39.0" prefWidth="206.0" promptText="Password" />
+            <Button fx:id="loginButton" layoutX="68.0" layoutY="206.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #FFF8DC;" text="Login" />
+            <Button fx:id="cancelButton" layoutX="68.0" layoutY="242.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #FFF8DC;" text="Cancel" />
+            <CheckBox fx:id="adminCheck" layoutX="28.0" layoutY="172.0" mnemonicParsing="false" onAction="#adminCheckOnAction" text="Admin" />
+            <CheckBox fx:id="employeeCheck" layoutX="110.0" layoutY="172.0" mnemonicParsing="false" onAction="#employeeCheckOnAction" text="Employee" />
+            <CheckBox fx:id="customerCheck" layoutX="207.0" layoutY="172.0" mnemonicParsing="false" onAction="#customerCheckOnAction" text="Customer" />
+            <Label layoutX="61.0" layoutY="291.0" prefHeight="19.0" prefWidth="98.0" text="New customer ?">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="186.0" prefHeight="28.0" prefWidth="70.0" text="Password">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="usernameField" layoutX="92.0" layoutY="133.0" prefHeight="25.0" prefWidth="206.0" promptText="Username" />
-            <PasswordField fx:id="passwordField" layoutX="92.0" layoutY="188.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" />
-            <Button fx:id="loginButton" layoutX="72.0" layoutY="301.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #FFF8DC;" text="Login" />
-            <Button fx:id="cancelButton" layoutX="72.0" layoutY="351.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #FFF8DC;" text="Cancel" />
-            <Label fx:id="loginMessage" layoutX="67.0" layoutY="93.0" prefHeight="17.0" prefWidth="203.0" />
-            <CheckBox fx:id="adminCheck" layoutX="67.0" layoutY="228.0" mnemonicParsing="false" onAction="#adminCheckOnAction" text="Admin" />
-            <CheckBox fx:id="employeeCheck" layoutX="139.0" layoutY="228.0" mnemonicParsing="false" onAction="#employeeCheckOnAction" text="Employee" />
-            <CheckBox fx:id="customerCheck" layoutX="228.0" layoutY="228.0" mnemonicParsing="false" onAction="#customerCheckOnAction" text="Customer" />
-            <Label layoutX="67.0" layoutY="263.0" prefHeight="19.0" prefWidth="98.0" text="New customer ?">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <Button fx:id="registerButton" layoutX="186.0" layoutY="260.0" mnemonicParsing="false" onAction="#registerOnAction" prefHeight="16.0" prefWidth="81.0" text="Register" />
+            <Button fx:id="registerButton" layoutX="167.0" layoutY="288.0" mnemonicParsing="false" onAction="#registerOnAction" prefHeight="16.0" prefWidth="81.0" text="Register" />
          </children>
-      </AnchorPane>
-   </right>
-</BorderPane>
+      </Pane>
+   </children>
+</Pane>

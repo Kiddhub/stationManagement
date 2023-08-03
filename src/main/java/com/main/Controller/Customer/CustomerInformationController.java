@@ -1,7 +1,11 @@
 package com.main.Controller.Customer;
 
 import com.main.Model.Customer;
+import com.main.View.Customer.CustomerBooking;
+import com.main.View.Customer.CustomerInformation;
 import com.main.View.Customer.CustomerInterface;
+import com.main.View.Customer.HistoryBooking;
+import com.main.View.Login;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -37,6 +41,16 @@ public class CustomerInformationController implements Initializable {
     private Button updateButton;
     @FXML
     private Button cancelButton;
+    @FXML
+    private Button createButton;
+
+    @FXML
+    private Button inforButton;
+
+    @FXML
+    private Button logOutButton;
+    @FXML
+    private Button historyBookingButton;
 
     private Customer customer;
 
@@ -84,6 +98,30 @@ public class CustomerInformationController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    public void createBooking()throws Exception{
+        CustomerBooking controller = new CustomerBooking(customer);
+        controller.start(new Stage());
+        Stage currentStage = (Stage) createButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void historyBooking() throws Exception{
+        HistoryBooking historyBooking = new HistoryBooking(customer);
+        historyBooking.start(new Stage());
+        Stage currentStage = (Stage) historyBookingButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void updateInformation() throws Exception {
+        CustomerInformation customerInformation = new CustomerInformation(customer);
+        customerInformation.start(new Stage());
+        Stage currentStage = (Stage) inforButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void logOut()throws Exception{
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.close();
     }
 
 

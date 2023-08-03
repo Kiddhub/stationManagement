@@ -2,6 +2,10 @@ package com.main.Controller.Admin;
 
 import com.main.Model.Employee;
 import com.main.View.Admin.AdminInterface;
+import com.main.View.Admin.BillManagement;
+import com.main.View.Admin.StationManagement;
+import com.main.View.Employee.CustomerManagement;
+import com.main.View.Login;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,8 +38,6 @@ public class EmployeeManagement implements Initializable {
     @FXML
     private Button deleteEmployeeButton;
     @FXML
-    private Button cancelButton;
-    @FXML
     private Button searchEmployeeButton;
     @FXML
     private TableView<Employee> table;
@@ -50,8 +52,6 @@ public class EmployeeManagement implements Initializable {
     @FXML
     private TableColumn<Employee, String> name;
     @FXML
-    private TableColumn<Employee, Double> salary;
-    @FXML
     private TableColumn<Employee,Integer>hours_worked;
     @FXML
     private TableColumn<Employee,String>username;
@@ -61,6 +61,17 @@ public class EmployeeManagement implements Initializable {
     private DatePicker employeeDobField;
     @FXML
     private TextField employeeIdField;
+
+    @FXML
+    private Button employeeButton;
+    @FXML
+    private Button stationButton;
+    @FXML
+    private Button billButton;
+    @FXML
+    private Button customerButton;
+    @FXML
+    private Button logOutButton;
 
 
     public void createEmployeeOnAction() {
@@ -108,7 +119,6 @@ public class EmployeeManagement implements Initializable {
         name.setCellValueFactory(new PropertyValueFactory<Employee,String>("employeeName"));
         idCard.setCellValueFactory(new PropertyValueFactory<Employee,String>("employeeIdCard"));
         hours_worked.setCellValueFactory(new PropertyValueFactory<Employee,Integer>("hours_worked"));
-        salary.setCellValueFactory(new PropertyValueFactory<Employee,Double>("salary"));
         username.setCellValueFactory(new PropertyValueFactory<Employee,String>("username"));
         password.setCellValueFactory(new PropertyValueFactory<Employee,String>("password"));
         ObservableList<Employee> employeeLists = Employee.getEmployeeFromData();
@@ -176,10 +186,34 @@ public class EmployeeManagement implements Initializable {
             }
         }
     }
-    public void cancelButtonOnAction() throws Exception{
-        AdminInterface adminInterface = new AdminInterface();
-        adminInterface.start(new Stage());
-        Stage cancel = (Stage) cancelButton.getScene().getWindow();
-        cancel.close();
+    public void employeeButtonOnAction() throws Exception {
+        com.main.View.Admin.EmployeeManagement employeeManagement = new com.main.View.Admin.EmployeeManagement();
+        employeeManagement.start(new Stage());
+        Stage currentStage = (Stage) employeeButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void stationButtonOnAction() throws Exception {
+        com.main.View.Admin.StationManagement stationManagement = new StationManagement();
+        stationManagement.start(new Stage());
+        Stage currentStage = (Stage) stationButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void billButtonOnAction() throws Exception {
+        BillManagement billManagement = new BillManagement();
+        billManagement.start(new Stage());
+        Stage currentStage = (Stage) billButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void customerButtonOnAction() throws Exception{
+        CustomerManagement customerManagement = new CustomerManagement();
+        customerManagement.start(new Stage());
+        Stage currentStage = (Stage) customerButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void logOutOnAction() throws Exception {
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.close();
     }
 }

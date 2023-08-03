@@ -9,22 +9,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2505643340857788" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="445.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Customer.HistoryBookingController">
+<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Customer.HistoryBookingController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Text layoutX="272.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LỊCH SỬ ĐẶT SÂN">
+            <Button fx:id="createButton" layoutX="350.0" layoutY="22.0" mnemonicParsing="false" onAction="#createBooking" prefHeight="43.0" prefWidth="107.0" text="TẠO PHIẾU" />
+            <Button fx:id="historyBookingButton" layoutX="463.0" layoutY="22.0" mnemonicParsing="false" onAction="#historyBooking" prefHeight="43.0" prefWidth="107.0" text="LỊCH SỬ PHIẾU " />
+            <Button fx:id="inforButton" layoutX="576.0" layoutY="22.0" mnemonicParsing="false" onAction="#updateInformation" prefHeight="43.0" prefWidth="151.0" text="CHỈNH SỬA THÔNG TIN" />
+            <Button fx:id="logOutButton" layoutX="777.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="43.0" prefWidth="107.0" text="ĐĂNG XUẤT" />
+            <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="cancelButton" layoutX="684.0" layoutY="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Huỷ" />
-            <TextField fx:id="bookingId" layoutX="518.0" layoutY="42.0" promptText="ID " />
-            <Button fx:id="exportButton" layoutX="684.0" layoutY="42.0" mnemonicParsing="false" onAction="#exportBillOnAction" prefHeight="25.0" prefWidth="50.0" text="In " />
+            <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="898.0" styleClass="body" stylesheets="@../style.css">
          <children>
-            <TableView fx:id="table" layoutX="199.0" layoutY="54.0" prefHeight="333.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="table" layoutX="155.0" layoutY="68.0" prefHeight="349.0" prefWidth="607.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="136.0" AnchorPane.topAnchor="68.0">
               <columns>
                 <TableColumn fx:id="id" prefWidth="52.0" text="ID " />
                 <TableColumn fx:id="stationName" prefWidth="70.0" text="Tên sân" />
@@ -35,6 +41,13 @@
                   <TableColumn fx:id="status" prefWidth="91.0" text="Trạng thái" />
               </columns>
             </TableView>
+            <Text fill="WHITE" layoutX="323.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LỊCH SỬ ĐẶT SÂN">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Text>
+            <TextField fx:id="bookingId" layoutX="613.0" layoutY="459.0" promptText="ID " />
+            <Button fx:id="exportButton" layoutX="545.0" layoutY="459.0" mnemonicParsing="false" onAction="#exportBillOnAction" prefHeight="25.0" prefWidth="50.0" text="In " />
          </children></AnchorPane>
   </items>
 </SplitPane>

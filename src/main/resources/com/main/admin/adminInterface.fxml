@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2301255230125523" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="480.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.AdminController">
+<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.AdminController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Button fx:id="logoutButton" layoutX="460.0" layoutY="35.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="34.0" prefWidth="83.0" text="Đăng xuất" />
-            <Label layoutX="39.0" layoutY="36.0" prefHeight="26.0" prefWidth="240.0" text="Giao diện quản trị viên">
+            <Button fx:id="logOutButton" layoutX="799.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="43.0" prefWidth="85.0" text="Đăng xuất" />
+            <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>
-                  <Font size="22.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
-            </Label>
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            </Text>
+            <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="createEmployeeButton" layoutX="350.0" layoutY="22.0" mnemonicParsing="false" onAction="#createEmployeeOnAction" prefHeight="43.0" prefWidth="85.0" text="Nhân viên" />
+            <Button fx:id="customerButton" layoutX="449.0" layoutY="22.0" mnemonicParsing="false" onAction="#customerManagementOnAction" prefHeight="43.0" prefWidth="95.0" text="Khách hàng" />
+            <Button fx:id="stationButton" layoutX="555.0" layoutY="22.0" mnemonicParsing="false" onAction="#stationManagementOnAction" prefHeight="43.0" prefWidth="95.0" text="Sân bóng" />
+            <Button fx:id="billButton" layoutX="660.0" layoutY="22.0" mnemonicParsing="false" onAction="#billManagementOnAction" prefHeight="43.0" prefWidth="85.0" text="Hoá đơn" />
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="898.0" styleClass="body" stylesheets="@../style.css">
          <children>
-            <Button fx:id="createEmployeeButton" layoutX="24.0" layoutY="49.0" mnemonicParsing="false" onAction="#createEmployeeOnAction" prefHeight="53.0" prefWidth="136.0" text="Đăng ký nhân viên" />
-            <Button fx:id="stationButton" layoutX="24.0" layoutY="145.0" mnemonicParsing="false" onAction="#stationManagementOnAction" prefHeight="53.0" prefWidth="136.0" text="Quản lý sân bóng" />
-            <Button fx:id="customerButton" layoutX="192.0" layoutY="49.0" mnemonicParsing="false" onAction="#customerManagementOnAction" prefHeight="53.0" prefWidth="136.0" text="Quản lý khách hàng" />
-            <Button fx:id="billButton" layoutX="192.0" layoutY="145.0" mnemonicParsing="false" onAction="#billManagementOnAction" prefHeight="53.0" prefWidth="136.0" text="Quản lý hoá đơn" />
+            <Text fill="WHITE" layoutX="210.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME ADMIN" wrappingWidth="478.13671875">
+               <font>
+                  <Font name="System Bold" size="47.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
   </items>
 </SplitPane>

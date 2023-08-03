@@ -2,6 +2,11 @@ package com.main.Controller.Admin;
 
 import com.main.Model.Bill;
 import com.main.View.Admin.AdminInterface;
+import com.main.View.Admin.BillManagement;
+import com.main.View.Admin.EmployeeManagement;
+import com.main.View.Admin.StationManagement;
+import com.main.View.Employee.CustomerManagement;
+import com.main.View.Login;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -49,11 +54,22 @@ public class BillManagementController implements Initializable {
     @FXML
     private TableColumn<Bill, Double> totalPrice;
     @FXML
-    private Button cancelButton;
-    @FXML
     private Button searchButton;
     @FXML
     private DatePicker bookingDateField;
+
+    @FXML
+    private Button employeeButton;
+    @FXML
+    private Button stationButton;
+    @FXML
+    private Button billButton;
+    @FXML
+    private Button customerButton;
+    @FXML
+    private Button logOutButton;
+
+
 
 
 
@@ -81,11 +97,34 @@ public class BillManagementController implements Initializable {
             table.setItems(FXCollections.observableList(billList));
         }
     }
-
-    public void cancelOnAction() throws Exception{
-        AdminInterface adminInterface = new AdminInterface();
-        adminInterface.start(new Stage());
-        Stage currentStage = (Stage) cancelButton.getScene().getWindow();
+    public void employeeButtonOnAction() throws Exception {
+        EmployeeManagement employeeManagement = new EmployeeManagement();
+        employeeManagement.start(new Stage());
+        Stage currentStage = (Stage) employeeButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void stationButtonOnAction() throws Exception {
+        StationManagement stationManagement = new StationManagement();
+        stationManagement.start(new Stage());
+        Stage currentStage = (Stage) stationButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void billButtonOnAction() throws Exception {
+        BillManagement billManagement = new BillManagement();
+        billManagement.start(new Stage());
+        Stage currentStage = (Stage) billButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void customerButtonOnAction() throws Exception{
+        CustomerManagement customerManagement = new CustomerManagement();
+        customerManagement.start(new Stage());
+        Stage currentStage = (Stage) customerButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void logOutOnAction() throws Exception {
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
         currentStage.close();
     }
 }

@@ -3,10 +3,15 @@ package com.main.Controller.Customer;
 import com.main.Model.Booking;
 import com.main.Model.Customer;
 import com.main.Model.Station;
+import com.main.View.Customer.CustomerBooking;
+import com.main.View.Customer.CustomerInformation;
+import com.main.View.Customer.HistoryBooking;
+import com.main.View.Login;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Date;
@@ -47,6 +52,18 @@ public class CustomerBookingController implements Initializable {
 
     @FXML
     private Button calculateButton;
+
+    @FXML
+    private Button createButton;
+
+    @FXML
+    private Button inforButton;
+
+    @FXML
+    private Button logOutButton;
+    @FXML
+    private Button historyBookingButton;
+
     private Customer customer;
     private Map<String, Integer> stationMap = new HashMap<>();
 
@@ -140,6 +157,33 @@ public class CustomerBookingController implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+    public void createBooking()throws Exception{
+        CustomerBooking controller = new CustomerBooking(customer);
+        controller.start(new Stage());
+        Stage currentStage = (Stage) createButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void historyBooking() throws Exception{
+        HistoryBooking historyBooking = new HistoryBooking(customer);
+        historyBooking.start(new Stage());
+        Stage currentStage = (Stage) historyBookingButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void updateInformation() throws Exception {
+        CustomerInformation customerInformation = new CustomerInformation(customer);
+        customerInformation.start(new Stage());
+        Stage currentStage = (Stage) inforButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void logOut()throws Exception{
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.close();
+    }
+
+
 
 
 }

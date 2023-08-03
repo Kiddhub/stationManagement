@@ -18,7 +18,7 @@ public class Login extends Application {
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(com.main.View.Login.class.getResource("/com/main/login.fxml"));
         primaryStage.initStyle(StageStyle.DECORATED);
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 855, 480);
         primaryStage.setTitle("Hello!");
         primaryStage.setScene(scene);
         primaryStage.show();
