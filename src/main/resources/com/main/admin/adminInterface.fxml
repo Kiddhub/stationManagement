@@ -10,21 +10,21 @@
   <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Button fx:id="logOutButton" layoutX="799.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="43.0" prefWidth="85.0" text="Đăng xuất" />
-            <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
+            <Text layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="createEmployeeButton" layoutX="350.0" layoutY="22.0" mnemonicParsing="false" onAction="#createEmployeeOnAction" prefHeight="43.0" prefWidth="85.0" text="Nhân viên" />
-            <Button fx:id="customerButton" layoutX="449.0" layoutY="22.0" mnemonicParsing="false" onAction="#customerManagementOnAction" prefHeight="43.0" prefWidth="95.0" text="Khách hàng" />
-            <Button fx:id="stationButton" layoutX="555.0" layoutY="22.0" mnemonicParsing="false" onAction="#stationManagementOnAction" prefHeight="43.0" prefWidth="95.0" text="Sân bóng" />
-            <Button fx:id="billButton" layoutX="660.0" layoutY="22.0" mnemonicParsing="false" onAction="#billManagementOnAction" prefHeight="43.0" prefWidth="85.0" text="Hoá đơn" />
+            <Button fx:id="employeeButton" layoutX="344.0" layoutY="24.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="NHÂN VIÊN" />
+            <Button fx:id="logOutButton" layoutX="796.0" layoutY="24.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="40.0" prefWidth="88.0" text="ĐĂNG XUẤT" />
+            <Button fx:id="stationButton" layoutX="541.0" layoutY="24.0" mnemonicParsing="false" onAction="#stationButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="SÂN BÓNG" />
+            <Button fx:id="billButton" layoutX="441.0" layoutY="24.0" mnemonicParsing="false" onAction="#billButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="HOÁ ĐƠN" />
+            <Button fx:id="customerButton" layoutX="639.0" layoutY="24.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="40.0" prefWidth="101.0" text="KHÁCH HÀNG" />
          </children>
       </AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="898.0" styleClass="body" stylesheets="@../style.css">

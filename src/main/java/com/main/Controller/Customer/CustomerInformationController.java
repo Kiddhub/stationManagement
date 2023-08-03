@@ -52,7 +52,7 @@ public class CustomerInformationController implements Initializable {
     @FXML
     private Button historyBookingButton;
 
-    private Customer customer;
+    private final Customer customer;
 
     public CustomerInformationController(Customer customer) {
         this.customer = customer;

@@ -11,46 +11,46 @@ import javafx.stage.Stage;
 
 public class AdminController {
     @FXML
-    private Button createEmployeeButton;
+    private Button employeeButton;
     @FXML
     private Button stationButton;
-    @FXML
-    private Button logoutButton;
     @FXML
     private Button billButton;
     @FXML
     private Button customerButton;
+    @FXML
+    private Button logOutButton;
 
-    public void logoutButtonOnAction() throws Exception {
-        Login login  = new Login();
-        login.start(new Stage());
-        Stage logoutStage = (Stage) logoutButton.getScene().getWindow();
-        logoutStage.close();
-    }
 
-    public void createEmployeeOnAction() throws Exception{
-        EmployeeManagement employeeManagement = new EmployeeManagement();
+    public void employeeButtonOnAction() throws Exception {
+        com.main.View.Admin.EmployeeManagement employeeManagement = new com.main.View.Admin.EmployeeManagement();
         employeeManagement.start(new Stage());
-        Stage createEmployee = (Stage) createEmployeeButton.getScene().getWindow();
-        createEmployee.close();
+        Stage currentStage = (Stage) employeeButton.getScene().getWindow();
+        currentStage.close();
     }
-
-    public void stationManagementOnAction()throws Exception{
-        StationManagement stationManagement = new StationManagement();
+    public void stationButtonOnAction() throws Exception {
+        com.main.View.Admin.StationManagement stationManagement = new com.main.View.Admin.StationManagement();
         stationManagement.start(new Stage());
         Stage currentStage = (Stage) stationButton.getScene().getWindow();
         currentStage.close();
     }
-    public void billManagementOnAction() throws Exception{
+    public void billButtonOnAction() throws Exception {
         BillManagement billManagement = new BillManagement();
         billManagement.start(new Stage());
         Stage currentStage = (Stage) billButton.getScene().getWindow();
         currentStage.close();
     }
-    public void customerManagementOnAction() throws Exception{
+    public void customerButtonOnAction() throws Exception{
         CustomerManagement customerManagement = new CustomerManagement();
         customerManagement.start(new Stage());
         Stage currentStage = (Stage) customerButton.getScene().getWindow();
         currentStage.close();
     }
+    public void logOutOnAction() throws Exception {
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.close();
+    }
 }
+
