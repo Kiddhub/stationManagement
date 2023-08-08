@@ -4,11 +4,14 @@ import com.main.Model.Customer;
 import com.main.Model.Customer;
 import com.main.Model.Customer;
 import com.main.Model.Employee;
+import com.main.View.Employee.Bill;
+import com.main.View.Login;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -48,44 +51,52 @@ public class CustomerManagement implements Initializable {
     private TableColumn<Customer, String> username;
     @FXML
     private TableColumn<Customer, String> password;
-    @FXML
-    private Button createButton;
-    @FXML
 
-    private Button updateButton;
     @FXML
     private Button deleteButton;
     @FXML
-    private Button cancelButton;
+    private Button logOutButton;
+    @FXML
+    private Button customerButton;
+    @FXML
+    private Button billButton;
 
-    public void createCustomerOnAction() {
-        String name = customerNameField.getText();
-        LocalDate dob = dobField.getValue();
-        String idCard = customerIdCardField.getText();
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        String address = customerAddressField.getText();
-        String phone = customerPhoneField.getText();
-        String formattedDob = dob.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        if (name.isEmpty() || formattedDob.isEmpty() || idCard.isEmpty() || username.isEmpty() || password.isEmpty() || address.isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, "Lỗi", "Phải điền đầy đủ thông tin");
-        }//thêm ngoại lệ kiểm tra username trùng nhau
-        Customer customer = new Customer(name,address,idCard,phone,username,formattedDob,password,3);
-        if (Customer.addCustomerToDatabase(customer)){
-            showAlert(Alert.AlertType.INFORMATION, "Thành công", "Đăng ký thành công");
-            customerNameField.setText("");
-            customerAddressField.setText("");
-            customerIdCardField.setText("");
-            dobField.setValue(null);
-            customerPhoneField.setText("");
-            usernameField.setText("");
-            passwordField.setText("");
-            ObservableList<Customer> customerList = Customer.getCustomerFromData();
-            table.setItems(customerList);
-        }else {
-            showAlert(Alert.AlertType.ERROR, "Error", "Lỗi");
-        }
+    private final String username1;
+
+    public CustomerManagement(String username1){
+        this.username1 = username1;
     }
+
+
+
+//    public void createCustomerOnAction() {
+//        String name = customerNameField.getText();
+//        LocalDate dob = dobField.getValue();
+//        String idCard = customerIdCardField.getText();
+//        String username = usernameField.getText();
+//        String password = passwordField.getText();
+//        String address = customerAddressField.getText();
+//        String phone = customerPhoneField.getText();
+//        String formattedDob = dob.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+//        if (name.isEmpty() || formattedDob.isEmpty() || idCard.isEmpty() || username.isEmpty() || password.isEmpty() || address.isEmpty()) {
+//            showAlert(Alert.AlertType.ERROR, "Lỗi", "Phải điền đầy đủ thông tin");
+//        }//thêm ngoại lệ kiểm tra username trùng nhau
+//        Customer customer = new Customer(name,address,idCard,phone,username,formattedDob,password,3);
+//        if (Customer.addCustomerToDatabase(customer)){
+//            showAlert(Alert.AlertType.INFORMATION, "Thành công", "Đăng ký thành công");
+//            customerNameField.setText("");
+//            customerAddressField.setText("");
+//            customerIdCardField.setText("");
+//            dobField.setValue(null);
+//            customerPhoneField.setText("");
+//            usernameField.setText("");
+//            passwordField.setText("");
+//            ObservableList<Customer> customerList = Customer.getCustomerFromData();
+//            table.setItems(customerList);
+//        }else {
+//            showAlert(Alert.AlertType.ERROR, "Error", "Lỗi");
+//        }
+//    }
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -93,7 +104,6 @@ public class CustomerManagement implements Initializable {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         id.setCellValueFactory(new PropertyValueFactory<Customer,Integer>("customerId"));
@@ -106,5 +116,18 @@ public class CustomerManagement implements Initializable {
         phone.setCellValueFactory(new PropertyValueFactory<Customer,String>("customerPhone"));
         ObservableList<Customer> customerList = Customer.getCustomerFromData();
         table.setItems(customerList);
+    }
+    public void billListOnAction() throws Exception {
+        com.main.View.Employee.Bill bill = new Bill(username1);
+        bill.start(new Stage());
+        Stage currentStage = (Stage) billButton.getScene().getWindow();
+        currentStage.close();
+    }
+
+    public void logoutButtonOnAction() throws Exception{
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.close();
     }
 }

@@ -11,44 +11,58 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.3040089086859688" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Employee.Bill">
+<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Employee.Bill">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="269.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Text layoutX="16.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOÁ ĐƠN KHÁCH HÀNG">
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="bookingIdField" layoutX="121.0" layoutY="50.0" prefHeight="25.0" prefWidth="131.0" promptText="ID phiếu" />
-            <Button fx:id="searchBookingButton" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#searchBookingOnAction" text="Tìm kiếm" />
-            <Label layoutX="14.0" layoutY="100.0" prefHeight="25.0" prefWidth="92.0" text="Tên khách hàng" />
-            <TextField fx:id="customerNameField" editable="false" layoutX="121.0" layoutY="100.0" prefHeight="25.0" prefWidth="131.0" />
-            <Label layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="92.0" text="Số điện thoại" />
-            <TextField fx:id="customerPhoneField" editable="false" layoutX="121.0" layoutY="150.0" prefHeight="25.0" prefWidth="131.0" />
-            <Label layoutX="14.0" layoutY="200.0" prefHeight="25.0" prefWidth="92.0" text="Tên sân" />
-            <TextField fx:id="stationNameField" editable="false" layoutX="121.0" layoutY="200.0" prefHeight="25.0" prefWidth="131.0" />
-            <Label layoutX="14.0" layoutY="250.0" prefHeight="25.0" prefWidth="92.0" text="Ngày thuê" />
-            <TextField fx:id="bookingDateField" editable="false" layoutX="121.0" layoutY="250.0" prefHeight="25.0" prefWidth="131.0" />
-            <Label layoutX="14.0" layoutY="300.0" prefHeight="25.0" prefWidth="92.0" text="Giờ vào" />
-            <TextField fx:id="timeInField" editable="false" layoutX="121.0" layoutY="300.0" prefHeight="25.0" prefWidth="131.0" />
-            <Label layoutX="14.0" layoutY="350.0" prefHeight="25.0" prefWidth="92.0" text="Giờ ra" />
-            <TextField fx:id="timeOutField" editable="false" layoutX="121.0" layoutY="350.0" prefHeight="25.0" prefWidth="131.0" />
-            <Label layoutX="14.0" layoutY="400.0" prefHeight="25.0" prefWidth="92.0" text="Tổng tiền" />
-            <TextField fx:id="totalPriceField" editable="false" layoutX="121.0" layoutY="400.0" prefHeight="25.0" prefWidth="131.0" />
-            <Button fx:id="confirmButton" layoutX="58.0" layoutY="545.0" mnemonicParsing="false" onAction="#confirmBillOnAction" text="Xác nhận " />
-            <Button fx:id="cancelButton" layoutX="145.0" layoutY="545.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="68.0" text="Huỷ" />
-            <Label layoutX="12.0" layoutY="448.0" prefHeight="25.0" prefWidth="92.0" text="Trạng thái" />
-            <Label layoutX="12.0" layoutY="495.0" prefHeight="25.0" prefWidth="92.0" text="Nhân viên" />
-            <TextField fx:id="employeeNameField" editable="false" layoutX="121.0" layoutY="495.0" prefHeight="25.0" prefWidth="131.0" />
-            <CheckBox fx:id="statusCheckBox" layoutX="121.0" layoutY="452.0" mnemonicParsing="false" text="Đã thanh toán" />
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <Text layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số xx, Đường yy, quận Hoàng Mai, Hà Nội" wrappingWidth="326.4609375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="logOutButton" layoutX="796.0" layoutY="26.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="ĐĂNG XUẤT" />
+            <Button fx:id="customerButton" layoutX="369.0" layoutY="26.0" mnemonicParsing="false" onAction="#createCustomerOnAction" prefHeight="40.0" prefWidth="133.0" text="KHÁCH HÀNG" />
+            <Button fx:id="billButton" disable="true" layoutX="525.0" layoutY="26.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="127.0" text="HOÁ ĐƠN" />
+         </children>
+      </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="body" stylesheets="@../style.css">
          <children>
-            <TableView fx:id="table" layoutX="27.0" layoutY="99.0" prefHeight="398.0" prefWidth="420.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <columns>
-                <TableColumn fx:id="id" prefWidth="41.0" text="ID" />
-                <TableColumn fx:id="stationName" prefWidth="71.0" text="Tên sân" />
+            <Text fill="WHITE" layoutX="325.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOÁ ĐƠN KHÁCH HÀNG">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Text>
+            <TextField fx:id="bookingIdField" layoutX="134.0" layoutY="22.0" prefHeight="25.0" prefWidth="131.0" promptText="ID phiếu" />
+            <Button fx:id="searchBookingButton" layoutX="27.0" layoutY="22.0" mnemonicParsing="false" onAction="#searchBookingOnAction" text="Tìm kiếm" />
+            <Label layoutX="21.0" layoutY="72.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Tên khách hàng" />
+            <TextField fx:id="customerNameField" editable="false" layoutX="134.0" layoutY="72.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="21.0" layoutY="122.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Số điện thoại" />
+            <TextField fx:id="customerPhoneField" editable="false" layoutX="134.0" layoutY="122.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="21.0" layoutY="172.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Tên sân" />
+            <TextField fx:id="stationNameField" editable="false" layoutX="134.0" layoutY="172.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="21.0" layoutY="222.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Ngày thuê" />
+            <TextField fx:id="bookingDateField" editable="false" layoutX="134.0" layoutY="222.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="21.0" layoutY="272.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Giờ vào" />
+            <TextField fx:id="timeInField" editable="false" layoutX="134.0" layoutY="272.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="21.0" layoutY="322.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Giờ ra" />
+            <TextField fx:id="timeOutField" editable="false" layoutX="134.0" layoutY="322.0" prefHeight="25.0" prefWidth="131.0" />
+            <Label layoutX="21.0" layoutY="372.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Tổng tiền" />
+            <TextField fx:id="totalPriceField" editable="false" layoutX="134.0" layoutY="372.0" prefHeight="25.0" prefWidth="131.0" />
+            <Button fx:id="confirmButton" layoutX="291.0" layoutY="458.0" mnemonicParsing="false" onAction="#confirmBillOnAction" text="Xác nhận " />
+            <Button fx:id="cancelButton" layoutX="381.0" layoutY="458.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="25.0" prefWidth="68.0" text="Huỷ" />
+            <Label layoutX="21.0" layoutY="412.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Trạng thái" />
+            <Label layoutX="21.0" layoutY="458.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: white;" text="Nhân viên" />
+            <TextField fx:id="employeeNameField" editable="false" layoutX="134.0" layoutY="458.0" prefHeight="25.0" prefWidth="131.0" />
+            <CheckBox fx:id="statusCheckBox" layoutX="134.0" layoutY="416.0" mnemonicParsing="false" text="Đã thanh toán" />
+            <TableView fx:id="table" layoutX="274.0" layoutY="60.0" prefHeight="381.0" prefWidth="619.0">
+               <columns>
+                  <TableColumn fx:id="id" prefWidth="41.0" text="ID" />
+                  <TableColumn fx:id="stationName" prefWidth="71.0" text="Tên sân" />
                   <TableColumn fx:id="bookingDate" prefWidth="78.0" text="Ngày thuê" />
                   <TableColumn fx:id="customerName" prefWidth="73.0" text="Khách hàng" />
                   <TableColumn fx:id="customerPhone" prefWidth="42.0" text="SĐT" />
@@ -56,7 +70,7 @@
                   <TableColumn fx:id="timeIn" prefWidth="60.0" text="Giờ vào" />
                   <TableColumn fx:id="totalPrice" prefWidth="102.0" text="Tổng tiền" />
                   <TableColumn fx:id="status" prefWidth="91.0" text="Trạng thái" />
-              </columns>
+               </columns>
             </TableView>
          </children></AnchorPane>
   </items>

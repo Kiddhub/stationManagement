@@ -25,14 +25,14 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="createButton" layoutX="365.0" layoutY="18.0" mnemonicParsing="false" onAction="#createBooking" prefHeight="43.0" prefWidth="107.0" text="TẠO PHIẾU" />
+            <Button fx:id="createButton" disable="true" layoutX="365.0" layoutY="18.0" mnemonicParsing="false" onAction="#createBooking" prefHeight="43.0" prefWidth="107.0" text="TẠO PHIẾU" />
             <Button fx:id="historyBookingButton" layoutX="479.0" layoutY="18.0" mnemonicParsing="false" onAction="#historyBooking" prefHeight="43.0" prefWidth="107.0" text="LỊCH SỬ PHIẾU " />
             <Button fx:id="inforButton" layoutX="593.0" layoutY="18.0" mnemonicParsing="false" onAction="#updateInformation" prefHeight="43.0" prefWidth="151.0" text="CHỈNH SỬA THÔNG TIN" />
             <Button fx:id="logOutButton" layoutX="777.0" layoutY="18.0" mnemonicParsing="false" onAction="#logOut" prefHeight="43.0" prefWidth="107.0" text="ĐĂNG XUẤT" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="526.0" styleClass="body" stylesheets="@../style.css">
          <children>
-            <Label layoutX="264.0" layoutY="91.0" prefHeight="25.0" prefWidth="82.0" text="Họ và tên" textFill="#d93e1a">
+            <Label layoutX="264.0" layoutY="91.0" prefHeight="25.0" prefWidth="82.0" text="Họ và tên" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
@@ -40,7 +40,7 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></TextField>
-            <Label layoutX="264.0" layoutY="141.0" prefHeight="25.0" prefWidth="82.0" text="Số điện thoại" textFill="#d93e1a">
+            <Label layoutX="264.0" layoutY="141.0" prefHeight="25.0" prefWidth="82.0" text="Số điện thoại" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
@@ -48,15 +48,15 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></TextField>
-            <Label layoutX="264.0" layoutY="241.0" prefHeight="25.0" prefWidth="82.0" text="Giờ vào" textFill="#d93e1a">
+            <Label layoutX="264.0" layoutY="241.0" prefHeight="25.0" prefWidth="82.0" text="Giờ vào" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <Label layoutX="264.0" layoutY="291.0" prefHeight="25.0" prefWidth="82.0" text="Giờ ra" textFill="#d93e1a">
+            <Label layoutX="264.0" layoutY="291.0" prefHeight="25.0" prefWidth="82.0" text="Giờ ra" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <Label layoutX="264.0" layoutY="341.0" prefHeight="25.0" prefWidth="82.0" text="Sân" textFill="#d93e1a">
+            <Label layoutX="264.0" layoutY="341.0" prefHeight="25.0" prefWidth="82.0" text="Sân" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
@@ -78,7 +78,7 @@
                </opaqueInsets></ChoiceBox>
             <Button fx:id="calculateButton" layoutX="264.0" layoutY="384.0" mnemonicParsing="false" onAction="#calculatePriceOnAction" prefHeight="32.0" prefWidth="76.0" text="Tính tiền" />
             <Button fx:id="createBookingButton" layoutX="383.0" layoutY="454.0" mnemonicParsing="false" onAction="#createBookingOnAction" prefHeight="32.0" prefWidth="76.0" text="Tạo " />
-            <Label layoutX="264.0" layoutY="191.0" prefHeight="25.0" prefWidth="82.0" text="Ngày thuê" textFill="#d93e1a">
+            <Label layoutX="264.0" layoutY="191.0" prefHeight="25.0" prefWidth="82.0" text="Ngày thuê" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>

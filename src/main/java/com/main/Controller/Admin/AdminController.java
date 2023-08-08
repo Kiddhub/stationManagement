@@ -1,10 +1,8 @@
 package com.main.Controller.Admin;
 
 import com.main.View.Admin.BillManagement;
-import com.main.View.Employee.CustomerManagement;
-import com.main.View.Admin.EmployeeManagement;
+import com.main.View.Admin.CusManagement;
 import com.main.View.Login;
-import com.main.View.Admin.StationManagement;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -41,8 +39,8 @@ public class AdminController {
         currentStage.close();
     }
     public void customerButtonOnAction() throws Exception{
-        CustomerManagement customerManagement = new CustomerManagement();
-        customerManagement.start(new Stage());
+        CusManagement cusManagement = new com.main.View.Admin.CusManagement();
+        cusManagement.start(new Stage());
         Stage currentStage = (Stage) customerButton.getScene().getWindow();
         currentStage.close();
     }

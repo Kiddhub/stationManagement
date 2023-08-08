@@ -26,7 +26,7 @@
             <Button fx:id="employeeButton" layoutX="349.0" layoutY="26.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="NHÂN VIÊN" />
             <Button fx:id="logOutButton" layoutX="806.0" layoutY="26.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="40.0" prefWidth="88.0" text="ĐĂNG XUẤT" />
             <Button fx:id="stationButton" layoutX="550.0" layoutY="26.0" mnemonicParsing="false" onAction="#stationButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="SÂN BÓNG" />
-            <Button fx:id="billButton" layoutX="449.0" layoutY="26.0" mnemonicParsing="false" onAction="#billButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="HOÁ ĐƠN" />
+            <Button fx:id="billButton" disable="true" layoutX="449.0" layoutY="26.0" mnemonicParsing="false" onAction="#billButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="HOÁ ĐƠN" />
             <Button fx:id="customerButton" layoutX="654.0" layoutY="26.0" mnemonicParsing="false" onAction="#customerButtonOnAction" prefHeight="40.0" prefWidth="101.0" text="KHÁCH HÀNG" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="body" stylesheets="@../style.css">
@@ -46,9 +46,9 @@
             </TableView>
             <Button fx:id="searchButton" layoutX="222.0" layoutY="422.0" mnemonicParsing="false" onAction="#searchBillOnAction" prefHeight="32.0" prefWidth="88.0" text="Tìm kiếm" />
             <DatePicker fx:id="bookingDateField" layoutX="321.0" layoutY="422.0" prefHeight="32.0" prefWidth="181.0" />
-            <Text layoutX="350.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ HOÁ ĐƠN" wrappingWidth="237.0">
+            <Text fill="WHITE" layoutX="302.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ HOÁ ĐƠN" wrappingWidth="326.4609375">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="32.0" />
                </font>
             </Text>
          </children></AnchorPane>

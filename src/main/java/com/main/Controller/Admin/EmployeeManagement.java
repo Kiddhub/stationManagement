@@ -3,6 +3,7 @@ package com.main.Controller.Admin;
 import com.main.Model.Employee;
 import com.main.View.Admin.AdminInterface;
 import com.main.View.Admin.BillManagement;
+import com.main.View.Admin.CusManagement;
 import com.main.View.Admin.StationManagement;
 import com.main.View.Employee.CustomerManagement;
 import com.main.View.Login;
@@ -205,7 +206,7 @@ public class EmployeeManagement implements Initializable {
         currentStage.close();
     }
     public void customerButtonOnAction() throws Exception{
-        CustomerManagement customerManagement = new CustomerManagement();
+        CusManagement customerManagement = new CusManagement();
         customerManagement.start(new Stage());
         Stage currentStage = (Stage) customerButton.getScene().getWindow();
         currentStage.close();

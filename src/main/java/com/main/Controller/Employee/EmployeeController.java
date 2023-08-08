@@ -3,6 +3,7 @@ package com.main.Controller.Employee;
 import com.main.Model.Employee;
 import com.main.View.Employee.Bill;
 import com.main.View.Employee.CustomerManagement;
+import com.main.View.Login;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -17,7 +18,7 @@ public class EmployeeController {
     private Button customerButton;
     @FXML
     private Button billButton;
-    private String username;
+    private final String username;
 
     public EmployeeController(String username){
         this.username = username;
@@ -41,7 +42,7 @@ public class EmployeeController {
         alert.showAndWait();
     }
     public void createCustomerOnAction() throws Exception{
-        CustomerManagement customerManagement = new CustomerManagement();
+        CustomerManagement customerManagement = new CustomerManagement(username);
         customerManagement.start(new Stage());
         Stage currentStage = (Stage) customerButton.getScene().getWindow();
         currentStage.close();
@@ -50,6 +51,13 @@ public class EmployeeController {
         Bill bill = new Bill(username);
         bill.start(new Stage());
         Stage currentStage = (Stage) billButton.getScene().getWindow();
+        currentStage.close();
+    }
+
+    public void logoutButtonOnAction() throws Exception{
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logoutButton.getScene().getWindow();
         currentStage.close();
     }
 

@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class EmployeeInterface extends Application {
 
-    private String username;
+    private final String username;
 
     public EmployeeInterface(String username) {
         this.username = username;

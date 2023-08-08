@@ -17,7 +17,7 @@ public class CustomerController {
     private Button createBookingButton;
     @FXML
     private Button historyBookingButton;
-    private String username;
+    private final String username;
 
     public CustomerController(String username){
         this.username = username;

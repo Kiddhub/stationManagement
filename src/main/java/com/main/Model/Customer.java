@@ -219,4 +219,19 @@ public class Customer {
             return false;
         }
     }
+
+    public static boolean deleteCustomer(String customerId){
+        try {
+            Connection connection = DbConnection.getConnection();
+            String sql = "DELETE FROM customers WHERE customerId = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,customerId);
+            int rs = statement.executeUpdate();
+            statement.close();
+            return rs > 0;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

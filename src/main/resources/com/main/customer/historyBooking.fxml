@@ -14,8 +14,8 @@
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
             <Button fx:id="createButton" layoutX="350.0" layoutY="22.0" mnemonicParsing="false" onAction="#createBooking" prefHeight="43.0" prefWidth="107.0" text="TẠO PHIẾU" />
-            <Button fx:id="historyBookingButton" layoutX="463.0" layoutY="22.0" mnemonicParsing="false" onAction="#historyBooking" prefHeight="43.0" prefWidth="107.0" text="LỊCH SỬ PHIẾU " />
-            <Button fx:id="inforButton" layoutX="576.0" layoutY="22.0" mnemonicParsing="false" onAction="#updateInformation" prefHeight="43.0" prefWidth="151.0" text="CHỈNH SỬA THÔNG TIN" />
+            <Button fx:id="historyBookingButton" disable="true" layoutX="465.0" layoutY="22.0" mnemonicParsing="false" onAction="#historyBooking" prefHeight="43.0" prefWidth="107.0" text="LỊCH SỬ PHIẾU " />
+            <Button fx:id="inforButton" layoutX="579.0" layoutY="22.0" mnemonicParsing="false" onAction="#updateInformation" prefHeight="43.0" prefWidth="151.0" text="CHỈNH SỬA THÔNG TIN" />
             <Button fx:id="logOutButton" layoutX="777.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="43.0" prefWidth="107.0" text="ĐĂNG XUẤT" />
             <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HỆ THỐNG SÂN BÓNG HUST">
                <font>

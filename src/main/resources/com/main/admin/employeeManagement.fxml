@@ -26,7 +26,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="employeeButton" layoutX="344.0" layoutY="24.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="NHÂN VIÊN" />
+            <Button fx:id="employeeButton" disable="true" layoutX="344.0" layoutY="24.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="NHÂN VIÊN" />
             <Button fx:id="logOutButton" layoutX="796.0" layoutY="24.0" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="40.0" prefWidth="88.0" text="ĐĂNG XUẤT" />
             <Button fx:id="stationButton" layoutX="541.0" layoutY="24.0" mnemonicParsing="false" onAction="#stationButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="SÂN BÓNG" />
             <Button fx:id="billButton" layoutX="441.0" layoutY="24.0" mnemonicParsing="false" onAction="#billButtonOnAction" prefHeight="40.0" prefWidth="88.0" text="HOÁ ĐƠN" />
@@ -48,38 +48,38 @@
             </TableView>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="505.0" prefWidth="286.0">
                <children>
-                  <Label layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="73.0" text="Họ và tên" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: white;" text="Họ và tên" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <TextField fx:id="employeeNameField" layoutX="108.0" layoutY="75.0" prefHeight="25.0" prefWidth="134.0" />
-                  <Label layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="47.0" text="Địa chỉ" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: white;" text="Địa chỉ" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <TextField fx:id="employeeAddressField" layoutX="108.0" layoutY="113.0" prefHeight="25.0" prefWidth="134.0" />
-                  <Label layoutX="14.0" layoutY="151.0" prefHeight="25.0" prefWidth="47.0" text="CMND" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="151.0" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: white;" text="CMND" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <TextField fx:id="employeeIdCardField" layoutX="108.0" layoutY="151.0" prefHeight="25.0" prefWidth="134.0" />
-                  <Label layoutX="14.0" layoutY="192.0" prefHeight="25.0" prefWidth="73.0" text="Ngày sinh" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="192.0" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: white;" text="Ngày sinh" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="271.0" prefHeight="25.0" prefWidth="73.0" text="Username" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="271.0" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: white;" text="Username" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <TextField fx:id="employeeUsernameField" layoutX="106.0" layoutY="271.0" prefHeight="25.0" prefWidth="134.0" />
-                  <Label layoutX="14.0" layoutY="314.0" prefHeight="25.0" prefWidth="58.0" text="Password" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="314.0" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: white;" text="Password" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <PasswordField fx:id="employeePasswordField" layoutX="106.0" layoutY="314.0" prefHeight="25.0" prefWidth="134.0" />
@@ -87,9 +87,9 @@
                   <Button fx:id="updateEmployeeButton" layoutX="93.0" layoutY="386.0" mnemonicParsing="false" onAction="#updateEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Sửa" />
                   <Button fx:id="deleteEmployeeButton" layoutX="93.0" layoutY="426.0" mnemonicParsing="false" onAction="#deleteEmployeeOnAction" prefHeight="25.0" prefWidth="66.0" text="Xoá" />
                   <DatePicker fx:id="employeeDobField" layoutX="107.0" layoutY="192.0" prefHeight="25.0" prefWidth="134.0" />
-                  <Label layoutX="14.0" layoutY="230.0" prefHeight="25.0" prefWidth="88.0" text="Số điện thoại" textFill="#eb1818">
+                  <Label layoutX="14.0" layoutY="230.0" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: white;" text="Số điện thoại" textFill="#0a0101">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <TextField fx:id="employeePhoneField" layoutX="106.0" layoutY="230.0" prefHeight="25.0" prefWidth="134.0" />

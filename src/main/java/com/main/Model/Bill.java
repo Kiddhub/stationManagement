@@ -187,7 +187,7 @@ public class Bill {
 
         try {
             Connection connection = DbConnection.getConnection();
-            String sql = "SELECT b.billId, c.customerName, bo.bookingDate, c.customerPhone, s.stationName, bo.timeIn, bo.timeOut, e.employeeName, bo.totalPrice " +
+            String sql = "SELECT b.billId, c.customerName, bo.bookingDate, c.customerPhone, s.stationName, bo.timeIn, bo.timeOut, e.username, bo.totalPrice " +
                     "FROM bills b " +
                     "JOIN bookings bo ON b.bookingId = bo.bookingId " +
                     "JOIN customers c ON bo.customerId = c.customerId " +

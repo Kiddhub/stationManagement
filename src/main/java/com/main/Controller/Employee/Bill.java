@@ -2,7 +2,9 @@ package com.main.Controller.Employee;
 
 import com.main.Model.Booking;
 import com.main.Model.Employee;
+import com.main.View.Employee.CustomerManagement;
 import com.main.View.Employee.EmployeeInterface;
+import com.main.View.Login;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -72,6 +74,12 @@ public class Bill implements Initializable {
     private TextField employeeNameField;
     @FXML
     private Button cancelButton;
+    @FXML
+    private Button logOutButton;
+    @FXML
+    private Button customerButton;
+    @FXML
+    private Button billButton;
     private String username;
     public Bill(String username){
         this.username = username;
@@ -165,5 +173,17 @@ public class Bill implements Initializable {
     alert.setContentText(message);
     alert.showAndWait();
 }
+    public void createCustomerOnAction() throws Exception{
+        com.main.View.Employee.CustomerManagement customerManagement = new CustomerManagement(username);
+        customerManagement.start(new Stage());
+        Stage currentStage = (Stage) customerButton.getScene().getWindow();
+        currentStage.close();
+    }
+    public void logoutButtonOnAction() throws Exception{
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.close();
+    }
 
 }

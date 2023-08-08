@@ -12,19 +12,28 @@
    <children>
       <Pane layoutX="523.0" layoutY="78.0" prefHeight="344.0" prefWidth="314.0" styleClass="login" stylesheets="@style.css">
          <children>
-            <Label layoutX="56.0" layoutY="14.0" prefHeight="54.0" prefWidth="218.0" text="ĐĂNG NHẬP" textAlignment="CENTER">
+            <Label layoutX="42.0" layoutY="14.0" prefHeight="54.0" prefWidth="234.0" text="ĐĂNG NHẬP" textAlignment="CENTER" textFill="#f51a1a">
                <font>
-                  <Font size="37.0" />
+                  <Font name="System Bold" size="37.0" />
                </font>
             </Label>
             <TextField fx:id="usernameField" layoutX="54.0" layoutY="78.0" prefHeight="39.0" prefWidth="206.0" promptText="Username" />
             <PasswordField fx:id="passwordField" layoutX="54.0" layoutY="129.0" prefHeight="39.0" prefWidth="206.0" promptText="Password" />
             <Button fx:id="loginButton" layoutX="68.0" layoutY="206.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #FFF8DC;" text="Login" />
             <Button fx:id="cancelButton" layoutX="68.0" layoutY="242.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="25.0" prefWidth="194.0" style="-fx-background-color: #FFF8DC;" text="Cancel" />
-            <CheckBox fx:id="adminCheck" layoutX="28.0" layoutY="172.0" mnemonicParsing="false" onAction="#adminCheckOnAction" text="Admin" />
-            <CheckBox fx:id="employeeCheck" layoutX="110.0" layoutY="172.0" mnemonicParsing="false" onAction="#employeeCheckOnAction" text="Employee" />
-            <CheckBox fx:id="customerCheck" layoutX="207.0" layoutY="172.0" mnemonicParsing="false" onAction="#customerCheckOnAction" text="Customer" />
-            <Label layoutX="61.0" layoutY="291.0" prefHeight="19.0" prefWidth="98.0" text="New customer ?">
+            <CheckBox fx:id="adminCheck" layoutX="28.0" layoutY="172.0" mnemonicParsing="false" onAction="#adminCheckOnAction" text="Admin" textFill="#02e15b">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="employeeCheck" layoutX="110.0" layoutY="172.0" mnemonicParsing="false" onAction="#employeeCheckOnAction" text="Employee" textFill="#02e15b">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="customerCheck" layoutX="207.0" layoutY="172.0" mnemonicParsing="false" onAction="#customerCheckOnAction" text="Customer" textFill="#02e15b">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></CheckBox>
+            <Label layoutX="61.0" layoutY="291.0" prefHeight="19.0" prefWidth="98.0" text="New customer ?" textFill="#da0101">
                <font>
                   <Font size="13.0" />
                </font>
