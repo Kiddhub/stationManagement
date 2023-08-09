@@ -15,7 +15,7 @@ public class StationManagement extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/main/admin/sationManagement.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/main/admin/stationManagement.fxml"));
         primaryStage.initStyle(StageStyle.DECORATED);
         Scene scene = new Scene(root, 900, 600);
         primaryStage.setTitle("Admin");

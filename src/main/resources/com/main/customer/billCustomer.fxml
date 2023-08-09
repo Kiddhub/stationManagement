@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.13316582914572864" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="468.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Customer.CustomerBill">
+<SplitPane dividerPositions="0.13316582914572864" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="468.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Customer.CustomerBill">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>

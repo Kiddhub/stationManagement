@@ -124,6 +124,7 @@ public class Customer {
     public void setRoleId(int roleId) {
         this.roleId = roleId;
     }
+
     public static boolean addCustomerToDatabase(Customer customer){
         try{
             Connection conn = DbConnection.getConnection();
@@ -233,5 +234,33 @@ public class Customer {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static Customer searchCustomers(String customerId){
+        Customer customer = new Customer();
+        try{
+            Connection connection = DbConnection.getConnection();
+            String sql = "SELECT customerId,customerName,customerAddress,customerIdCard,dob,customerPhone,username,password FROM customers WHERE customerId = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,customerId);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                customer.setCustomerId(rs.getInt("customerId"));
+                customer.setCustomerName(rs.getString("customerName"));
+                customer.setCustomerAddress(rs.getString("customerAddress"));
+                customer.setCustomerIdCard(rs.getString("customerIdCard"));
+                customer.setDob(rs.getString("dob"));
+                customer.setCustomerPhone(rs.getString("customerPhone"));
+                customer.setUsername(rs.getString("username"));
+                customer.setPassword(rs.getString("password"));
+            }else {
+                return null;
+            }
+            statement.close();
+            rs.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return customer;
     }
 }

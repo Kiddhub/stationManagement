@@ -1,6 +1,7 @@
 package com.main.Controller.Admin;
 
 import com.main.Model.Customer;
+import com.main.Model.Employee;
 import com.main.View.Admin.BillManagement;
 import com.main.View.Admin.EmployeeManagement;
 import com.main.View.Admin.StationManagement;
@@ -14,6 +15,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class CusManagement implements Initializable {
@@ -51,6 +54,11 @@ public class CusManagement implements Initializable {
     private TableColumn<Customer, String> username;
     @FXML
     private TableColumn<Customer, String> password;
+
+    @FXML
+    private Button createButton;
+    @FXML
+    private Button updateButton;
 
     @FXML
     private Button employeeButton;
@@ -106,7 +114,75 @@ public class CusManagement implements Initializable {
         }
     }
 
+    public void createBtn() {
+        String name = customerNameField.getText();
+        LocalDate dob = dobField.getValue();
+        String idCard = customerIdCardField.getText();
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+        String address = customerAddressField.getText();
+        String phone = customerPhoneField.getText();
+        String formattedDob = dob.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        if (name.isEmpty() || formattedDob.isEmpty() || idCard.isEmpty() || username.isEmpty() || password.isEmpty() || address.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Phải điền đầy đủ thông tin");}
+        Customer customer = new Customer(name,address,idCard,phone,username,formattedDob,password,3);
+        if(Customer.addCustomerToDatabase(customer)){
+            showAlert(Alert.AlertType.INFORMATION, "Thành công", "Đăng ký thành công");
+            ObservableList<Customer> customerList = Customer.getCustomerFromData();
+            table.setItems(customerList);
+            customerNameField.setText("");
+            dobField.setValue(null);
+            customerIdCardField.setText("");
+            usernameField.setText("");
+            passwordField.setText("");
+            customerAddressField.setText("");
+            customerPhoneField.setText("");
+        }else {
+            showAlert(Alert.AlertType.ERROR, "Error", "Lỗi");
+        }
+    }
 
+
+    public void searchBtn(){
+        String id = idField.getText();
+        if (id.isEmpty()) {
+            showAlert(Alert.AlertType.ERROR, "Error", "Phai nhap ID");
+        } else {
+            Customer customer = Customer.searchCustomers(id);
+            if(customer == null){
+                showAlert(Alert.AlertType.ERROR, "Lỗi", "Không tìm thấy thông tin");
+            }else{
+                showAlert(Alert.AlertType.INFORMATION, "Thông báo", "Tìm thấy thông tin");
+                customerNameField.setText(customer.getCustomerName());
+                customerAddressField.setText(customer.getCustomerAddress());
+                customerIdCardField.setText(customer.getCustomerIdCard());
+                usernameField.setText(customer.getUsername());
+                dobField.setValue(LocalDate.parse(customer.getDob()));
+                passwordField.setText(customer.getPassword());
+                customerPhoneField.setText(customer.getCustomerPhone());
+                usernameField.setEditable(false);
+            }
+        }
+    }
+    public void updateBtn(){
+        String id = idField.getText();
+        String name = customerNameField.getText();
+        String address = customerAddressField.getText();
+        String idCard = customerIdCardField.getText();
+        LocalDate dob = dobField.getValue();
+        String username = usernameField.getText();
+        String phone = customerPhoneField.getText();
+        String password = passwordField.getText();
+        String formattedDob = dob.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        boolean isUpdated = Customer.updateCustomer(name,idCard,address,formattedDob,phone,username,password);
+        if(isUpdated){
+            showAlert(Alert.AlertType.INFORMATION, "Thành công", "Thông tin  được cập nhật ");
+            ObservableList<Customer> customerList = Customer.getCustomerFromData();
+            table.setItems(customerList);
+        }else {
+            showAlert(Alert.AlertType.ERROR, "Lỗi", "Không thể cập nhật thông tin");
+        }
+    }
     public void employeeBtn() throws Exception {
         EmployeeManagement employeeManagement = new EmployeeManagement();
         employeeManagement.start(new Stage());

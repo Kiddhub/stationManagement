@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.CusManagement">
+<SplitPane dividerPositions="0.1505016722408027" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.Controller.Admin.CusManagement">
   <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
@@ -61,14 +61,16 @@
             <DatePicker fx:id="dobField" layoutX="109.0" layoutY="247.0" prefHeight="25.0" prefWidth="149.0" />
             <Label layoutX="32.0" layoutY="284.0" prefHeight="24.0" prefWidth="70.0" style="-fx-background-color: white;" text="Password" />
             <PasswordField fx:id="passwordField" layoutX="109.0" layoutY="284.0" />
-            <Button fx:id="deleteButton" layoutX="79.0" layoutY="414.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="25.0" prefWidth="61.0" text="Xoá" />
+            <Button fx:id="deleteButton" layoutX="146.0" layoutY="414.0" mnemonicParsing="false" onAction="#deleteBtn" prefHeight="25.0" prefWidth="61.0" text="Xoá" />
             <TextField fx:id="idField" layoutX="109.0" layoutY="365.0" promptText="ID" />
-            <Button fx:id="searchButton" layoutX="32.0" layoutY="365.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="Tìm kiếm" />
+            <Button fx:id="searchButton" layoutX="32.0" layoutY="365.0" mnemonicParsing="false" onAction="#searchBtn" prefHeight="25.0" prefWidth="70.0" text="Tìm kiếm" />
             <Text fill="WHITE" layoutX="267.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUẢN LÝ KHÁCH HÀNG">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font>
             </Text>
+            <Button fx:id="updateButton" layoutX="79.0" layoutY="414.0" mnemonicParsing="false" onAction="#updateBtn" prefHeight="25.0" prefWidth="61.0" text="Sửa" />
+            <Button fx:id="createButton" layoutX="14.0" layoutY="414.0" mnemonicParsing="false" onAction="#createBtn" prefHeight="25.0" prefWidth="61.0" text="Thêm" />
          </children></AnchorPane>
   </items>
 </SplitPane>
