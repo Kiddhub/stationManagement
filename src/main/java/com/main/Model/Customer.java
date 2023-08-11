@@ -125,6 +125,7 @@ public class Customer {
         this.roleId = roleId;
     }
 
+
     public static boolean addCustomerToDatabase(Customer customer){
         try{
             Connection conn = DbConnection.getConnection();

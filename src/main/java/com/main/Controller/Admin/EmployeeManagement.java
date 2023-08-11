@@ -112,7 +112,7 @@ public class EmployeeManagement implements Initializable {
         alert.showAndWait();
     }
 
-    @Override
+    @Override //mo giao dien len thi chay ham nay truoc
     public void initialize(URL url, ResourceBundle resourceBundle) {
         id.setCellValueFactory(new PropertyValueFactory<Employee,Integer>("employeeId"));
         dob.setCellValueFactory(new PropertyValueFactory<Employee,String>("dob"));
@@ -122,7 +122,9 @@ public class EmployeeManagement implements Initializable {
         hours_worked.setCellValueFactory(new PropertyValueFactory<Employee,Integer>("hours_worked"));
         username.setCellValueFactory(new PropertyValueFactory<Employee,String>("username"));
         password.setCellValueFactory(new PropertyValueFactory<Employee,String>("password"));
-        ObservableList<Employee> employeeLists = Employee.getEmployeeFromData();
+
+
+        ObservableList<Employee> employeeLists = Employee.getEmployeeFromData();//lay ra thong tin cua nhan vien trong database
         table.setItems(employeeLists);
     }
 

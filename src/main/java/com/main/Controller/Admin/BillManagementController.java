@@ -71,9 +71,6 @@ public class BillManagementController implements Initializable {
     private Button logOutButton;
 
 
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         billId.setCellValueFactory(new PropertyValueFactory<>("billId"));

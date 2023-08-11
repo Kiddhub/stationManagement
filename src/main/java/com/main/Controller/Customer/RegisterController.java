@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 
 public class RegisterController {
     @FXML
-    private Button cancelButton;
+    private Button loginButton;
 
     @FXML
     private PasswordField confirmPasswordField;
@@ -77,5 +77,12 @@ public class RegisterController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public void loginBtn() throws Exception{
+        Login login = new Login();
+        login.start(new Stage());
+        Stage currentStage = (Stage) loginButton.getScene().getWindow();
+        currentStage.close();
     }
 }

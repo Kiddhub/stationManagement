@@ -19,7 +19,6 @@ public class AdminController {
     @FXML
     private Button logOutButton;
 
-
     public void employeeButtonOnAction() throws Exception {
         com.main.View.Admin.EmployeeManagement employeeManagement = new com.main.View.Admin.EmployeeManagement();
         employeeManagement.start(new Stage());

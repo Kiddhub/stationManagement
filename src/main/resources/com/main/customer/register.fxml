@@ -60,11 +60,16 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Button fx:id="createButton" layoutX="85.0" layoutY="442.0" mnemonicParsing="false" onAction="#createCustomerOnAction" prefHeight="25.0" prefWidth="54.0" text="Tạo" />
-            <Button fx:id="cancelButton" layoutX="165.0" layoutY="442.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Huỷ" />
+            <Button fx:id="createButton" layoutX="140.0" layoutY="430.0" mnemonicParsing="false" onAction="#createCustomerOnAction" prefHeight="25.0" prefWidth="54.0" text="Tạo" />
+            <Button fx:id="loginButton" layoutX="169.0" layoutY="465.0" mnemonicParsing="false" onAction="#loginBtn" prefHeight="25.0" prefWidth="75.0" text="Đăng nhập" />
             <PasswordField fx:id="passwordField" layoutX="127.0" layoutY="336.0" prefHeight="25.0" prefWidth="159.0" />
             <PasswordField fx:id="confirmPasswordField" layoutX="127.0" layoutY="386.0" prefHeight="25.0" prefWidth="159.0" />
             <DatePicker fx:id="dobField" layoutX="128.0" layoutY="236.0" prefHeight="25.0" prefWidth="159.0" />
+            <Text fill="#ff4040" layoutX="76.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Đã có tài khoản">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
          </children></AnchorPane>
   </items>
 </SplitPane>

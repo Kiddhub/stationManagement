@@ -182,7 +182,7 @@ public class Bill {
         }
         return billList;
     }
-    public static ObservableList<Bill> getBillsByDate(LocalDate date) {
+    public static ObservableList<Bill> getBillsByDate(LocalDate date) {//tim kiem theo ngay
         ObservableList<Bill> billList = FXCollections.observableArrayList();
 
         try {
